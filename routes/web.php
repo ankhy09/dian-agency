@@ -16,3 +16,9 @@ Route::resource('/produk', 'admin\\ProdukController');
 Route::resource('/tipe', 'admin\\tipeController');
 Route::get('produk/create','ProdukController@create');
 Route::get('produk/create', 'admin\\ProdukController@create');
+Route::get('/','PagesController@home');
+Route::get('/contact','PagesController@contact');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
