@@ -128,7 +128,7 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
+                        <li class="active"><a href="/">Home</a></li>
                         <li><a href="#">Pemesanan Jasa Cetak</a>
                             <ul class="dropdown">
                                 <li><a href="#">Spanduk</a></li>
@@ -137,7 +137,7 @@
                                 <li><a href="#">Pin></a></li>
                             </ul>
                         </li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
@@ -145,6 +145,7 @@
         </div>
     </header>
     <!-- Header End -->
+
 
     @yield('content')
 

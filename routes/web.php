@@ -13,9 +13,10 @@
 
 
 Route::resource('/produk', 'admin\\ProdukController');
-Route::resource('/tipe', 'admin\\tipeController');
+// Route::resource('/tipe', 'admin\\TipeController');
 Route::get('produk/create','ProdukController@create');
 Route::get('produk/create', 'admin\\ProdukController@create');
+Route::resource('/admin', 'admin\\ProdukController@create');
 Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
 
