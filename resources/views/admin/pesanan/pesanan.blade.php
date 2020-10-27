@@ -19,10 +19,10 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->nama_produk }}</td>
                                 <td>{{ $item->deskripsi_produk }}</td>
-                                <td> <img src="{{url('/images/'.$item->gambar) }}" style="height:100px; object-fit: cover"> </td>
+                                <td> <img src="{{url('admin/images/'.$item->gambar) }}" style="height:100px; object-fit: cover"> </td>
                                 <td>
-                                    <a href="{{ url('/dataproduk/' . $item->id_produk . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
-                                    <form method="POST" action="{{ url('/dataproduk' . '/' . $item->id_produk) }}" accept-charset="UTF-8" style="display:inline">
+                                    <a href="{{ url('/produk/' . $item->id_produk . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
+                                    <form method="POST" action="{{ url('/produk' . '/' . $item->id_produk) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger btn-sm" title="Delete node" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
@@ -33,5 +33,8 @@
                         </tbody>
             </table>
             {!! $datas->render() !!}
+
         </div>
+
+        
 @endsection

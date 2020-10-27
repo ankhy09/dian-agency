@@ -43,30 +43,16 @@
     <div class="banner-section spad">
         <div class="container-fluid">
             <div class="row">
+                @foreach($datas as $item)
                 <div class="col-lg-4">
                     <div class="single-banner">
-                        <img src="img/banner-1.jpg" alt="">
+                        <img src="{{url('admin/images/'.$item->gambar) }}" alt="">
                         <div class="inner-text">
-                            <h4>Men’s</h4>
+                            <h4{{ $item->nama_produk }}</h4>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="single-banner">
-                        <img src="img/banner-2.jpg" alt="">
-                        <div class="inner-text">
-                            <h4>Women’s</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-banner">
-                        <img src="img/banner-3.jpg" alt="">
-                        <div class="inner-text">
-                            <h4>Kid’s</h4>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

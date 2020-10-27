@@ -13,12 +13,22 @@
 
 
 Route::resource('/produk', 'admin\\ProdukController');
-// Route::resource('/tipe', 'admin\\TipeController');
-Route::get('produk/create','ProdukController@create');
 Route::get('produk/create', 'admin\\ProdukController@create');
-Route::resource('/admin', 'admin\\ProdukController@create');
+// Route::resource('/ukuran', 'admin\\UkuranController');
+
+Route::get('/ukuran/{id}', 'admin\\UkuranController@index')->name('admin.ukuran.index');
+
+
 Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
+Route::get('/pesanspanduk','PagesController@pemesananspanduk');
+Route::get('/pesanxbanner','PagesController@pemesananxbanner');
+Route::get('/pesanposter','PagesController@pemesananposter');
+Route::get('/cart','PagesController@cart');
+
+Route::get('/login','PagesController@login');
+Route::get('/register','PagesController@register');
+
 
 Auth::routes();
 

@@ -32,10 +32,6 @@ class ProdukController extends Controller
         $post = new Produk;
         $post->nama_produk = $request->get('nama_produk');
         $post->deskripsi_produk = $request->get('deskripsi_produk');
-        $image = $request->file('gambar');
-        $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('admin/images'), $new_name);
-        $post->gambar = $new_name;
         $post->save();
         return redirect('produk')->with('flash_message', 'rute added!');
 
@@ -45,6 +41,14 @@ class ProdukController extends Controller
 
         $datas = Produk::findOrFail($id);
         return view('admin.produk.edit', compact('datas'));
+    }
+
+    public function detailproduk($id) {
+
+        $datas = Produk::findOrFail($id);
+        // dd($datas);
+        return view('admin.produk.detailproduk', compact('datas'));
+    
     }
 
 

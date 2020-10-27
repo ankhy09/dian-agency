@@ -8,7 +8,6 @@
                             <th width="10px">No</th>
                             <th>Nama</th>
                             <th>Deskripsi</th>
-                            <th>Gambar</th>
                             <th>Action</th>
                             </tr>
             </thead>
@@ -19,9 +18,9 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->nama_produk }}</td>
                                 <td>{{ $item->deskripsi_produk }}</td>
-                                <td> <img src="{{url('admin/images/'.$item->gambar) }}" style="height:100px; object-fit: cover"> </td>
                                 <td>
                                     <a href="{{ url('/produk/' . $item->id_produk . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
+                                    <a href="{{ route('admin.ukuran.index', $item->id_produk)  }}"class="btn btn-primary btn-sm ">Detail</a>
                                     <form method="POST" action="{{ url('/produk' . '/' . $item->id_produk) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}

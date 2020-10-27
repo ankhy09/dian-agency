@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Produk;
 
 class PagesController extends Controller
 {
     public function home()
     {
-        return view ('user.home');
+        $datas = Produk::orderBy('id_produk', 'DESC')->paginate(10);
+        return view('user.home', compact('datas'));
     }
 
     public function pemesanan()
@@ -25,4 +27,30 @@ class PagesController extends Controller
         return view ('user.login');
     }
 
+    public function pemesananspanduk()
+    {
+        return view ('user.spanduk');
+    }
+
+    public function pemesananxbanner()
+    {
+        return view ('user.xbanner');
+    }
+
+    public function pemesananposter()
+    {
+        return view ('user.poster');
+    }
+
+    public function pemesananpin()
+    {
+        return view ('user.pin');
+    }
+
+    public function cart()
+    {
+        return view ('user.cart');
+    }
+
+    
 }

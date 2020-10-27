@@ -13,10 +13,10 @@
             </ul>
             @endif
 
-                    <form method="POST" action="{{ url('tipe') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                    <form method="POST" action="{{ url('ukuran') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                         
                         {{ csrf_field() }}
-                        @include ('admin.tipe.form', ['formMode' => 'create'])
+                        @include ('admin.ukuran.form', ['formMode' => 'create'])
                     </form>
 
             <!-- form input data--->

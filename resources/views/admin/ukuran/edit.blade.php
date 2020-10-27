@@ -13,10 +13,10 @@
             </ul>
             @endif
 
-                <form method="POST" action="{{ route('tipe.update', $datas->id_produk)}}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('produk.update', $datas->id_produk)}}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                         {{ method_field('PUT') }}
                             {{ csrf_field() }}
-                            @include ('admin.tipe.form', ['formMode' => 'edit'])
+                            @include ('admin.produk.form', ['formMode' => 'edit'])
                 </form>
 
             <!-- form input data--->

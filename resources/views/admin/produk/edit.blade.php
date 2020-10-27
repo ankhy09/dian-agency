@@ -1,4 +1,4 @@
-@extends ('layout.admin')
+@extends ('layout.main')
 @section('content')
     <div class="panel-heading">
           Edit
