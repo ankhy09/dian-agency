@@ -12,7 +12,7 @@ class Ukuran extends Model
     [
             'id_ukuran'
     ];
-
+    public $timestamps = false;
     public function produk()
     {
         return $this->belongsTo(Produk::class,'id_produk');

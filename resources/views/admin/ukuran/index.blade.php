@@ -1,9 +1,9 @@
 @extends ('layout.main')
 @section('tombol')
 <div class="panel-heading">
-              <button  class="btn btn-light" onclick="history.go(-1);">
+              <a  class="btn btn-light" href ="{{'/produk'}}">
               <i class="fas fa-long-arrow-alt-left"></i>
-            </button>
+</a>
             @endsection
 @section('content')
 @section('judul_halaman', 'ukuran')
@@ -43,7 +43,7 @@
                          </table>
            
 
-        <a href="{{ url('/ukuran/create') }}"class="btn btn-primary btn-m ">Tambah</a>
+        <a href="{{ url('/ukuran/' . $ids . '/create') }}"class="btn btn-primary btn-m ">Tambah</a>
 
         </div>
 

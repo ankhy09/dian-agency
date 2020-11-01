@@ -10,27 +10,30 @@ use App\Produk;
 class UkuranController extends Controller
 {
 
-    public function index($id)
+    public function index()
     {
-        $datas = Ukuran::where('id_produk', '=', $id)->take(10)->get();
-        return view('admin.ukuran.index', compact('datas'));
+        return redirect('produk')->with('flash_message', 'eror');
     }
 
-    protected function validator(array $data)
+    public function show($id){
+        $datas = Ukuran::where('id_produk', '=', $id)->take(10)->get();
+        $ids = $id;
+        return view('admin.ukuran.index', compact('datas','ids'));
+    }
+
+    public function create($id)
     {
-        return Validator::make($data, [
+        $ids = $id;
+        return view('admin.ukuran.create', compact('ids'));
+    }
+
+    public function store(Request $request) {
+
+        $validatedData = $request->validate([
             'id_produk' => ['required', 'int'],
             'ukuran' => ['required', 'string'],
             'harga' => ['required', 'int'],
         ]);
-    }
-
-    public function create()
-    {
-        return view('admin.ukuran.create');
-    }
-
-    public function store(Request $request) {
         $post = new Ukuran;
         $post->id_produk = $request->get('id_produk');
         $post->ukuran = $request->get('ukuran');
@@ -48,10 +51,10 @@ class UkuranController extends Controller
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-                'id_produk' => ['required', 'int'],
-                'ukuran' => ['required', 'string'],
-                'harga' => ['required', 'int'],
+        $validatedData = $request->validate([
+            'id_produk' => ['required', 'int'],
+            'ukuran' => ['required', 'string'],
+            'harga' => ['required', 'int'],
         ]);
 
         $form_data = array(

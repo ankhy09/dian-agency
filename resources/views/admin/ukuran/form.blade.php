@@ -1,6 +1,6 @@
 <div class="form-group {{ $errors->has('id_produk') ? 'has-error' : ''}}">
     <label for="id_produk" class="control-label">{{ 'ID Produk' }}</label>
-    <input class="form-control" name="id_produk" type="text" id="id_produk" value="{{ isset($datas->id_produk) ? $datas->id_produk : ''}}">
+    <input class="form-control" name="id_produk" type="text" id="id_produk" value="{{ isset($datas->id_produk) ? $datas->id_produk : $ids}}" readonly="readonly">
     {!! $errors->first('id_produk', '<p class="help-block">:message</p>') !!}
 </div>
 

@@ -15,13 +15,6 @@ class ProdukController extends Controller
         return view('admin.produk.index', compact('datas'));
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'nama_produk' => ['required', 'string'],
-            'deskripsi_produk' => ['required', 'string'],
-        ]);
-    }
 
     public function create()
     {
@@ -29,6 +22,11 @@ class ProdukController extends Controller
     }
 
     public function store(Request $request) {
+        $validatedData = $request->validate([
+            'nama_produk' => ['required', 'string'],
+            'deskripsi_produk' => ['required', 'string'],
+        ]);
+
         $post = new Produk;
         $post->nama_produk = $request->get('nama_produk');
         $post->deskripsi_produk = $request->get('deskripsi_produk');
@@ -47,9 +45,9 @@ class ProdukController extends Controller
 
 public function update(Request $request, $id)
 {
-    $request->validate([
-            'nama_produk' => ['required', 'string'],
-            'deskripsi_produk' => ['required', 'string'],
+    $validatedData = $request->validate([
+        'nama_produk' => ['required', 'string'],
+        'deskripsi_produk' => ['required', 'string'],
     ]);
 
     $form_data = array(
