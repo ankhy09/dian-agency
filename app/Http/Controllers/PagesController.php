@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Produk;
+use App\Ukuran;
 
 class PagesController extends Controller
 {
@@ -29,7 +30,8 @@ class PagesController extends Controller
 
     public function pemesananspanduk()
     {
-        return view ('user.spanduk');
+        $datas = Ukuran::where('id_produk', '=', '8')->take(10)->get();
+        return view('user.spanduk', compact('datas'));
     }
 
     public function pemesananxbanner()

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Produk;
-use App\Gambar;
+use App\Ukuran;
 use App\Http\Controllers\Controller;
 
 class ProdukController extends Controller
@@ -65,4 +65,5 @@ public function update(Request $request, $id)
         Produk::destroy($id);
         return redirect()->to('produk')->with('flash_message', 'produk terhapus!');
     }
+
 }

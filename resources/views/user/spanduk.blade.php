@@ -6,34 +6,29 @@
                 <div class="col-lg-5 order-1 order-lg-2">
                     
                 </div>
-            
-                <div class="col-lg-5 order-1 order-lg-2">                  
+               
+
+                <div class="col-lg-5 order-1 order-lg-2">   
+                <form method="post" action="#">
+                    @csrf               
                                         <div class="row">
                                             <div class="col-lg-5 col-md-12">
-                                                 <label for="fir">SIZE/FORMAT<span>*</span></label>
+                                                 <label for="fir">Ukuran</label>
                                                     <div class="select-option">
+                                                    
                                                         <select class="sorting">
-                                                            <option value="100x120" dir="100 x 120 cm" selected>100 x 120 cm</option>
-                                                            <option value="100x150" dir="100 x 150 cm" >100 x 150 cm</option>
-                                                            <option value="100x200" dir="100 x 200 cm" >100 x 200 cm</option>
-                                                            <option value="100x300" dir="100 x 300 cm" >100 x 300 cm</option>
-                                                            <option value="100x400" dir="100 x 400 cm" >100 x 400 cm</option>
-                                                            <option value="custom" >Custom Format</option>
+                                                        @foreach($datas as $item)
+                                                            <option value="{{$item->id_ukuran}}" selected>{{$item->ukuran}} cm</option>
+                                                            @endforeach
                                                         </select>
+                                                       
                                                     </div>
                                             </div>
+
                                             <div class="col-lg-5 col-md-12">
-                                            <label for="fir">QUANTITY<span>*</span></label>
-                                                <div class="select-option">
-                                                    <select class="sorting">
-                                                        <option value="1" selected>1 Pieces</option>
-                                                        <option value="5" >5 Pieces</option>
-                                                        <option value="10" >10 Pieces</option>
-                                                        <option value="50" >50 Pieces</option>
-                                                        <option value="100" >100 Pieces</option>
-                                                        <option value="fqbtn">Other Quantity</option>
-                                                    </select>
-                                                </div>
+                                            <label for="jumlah">Jumlah</label>                                               
+                                                <input class="form-control" name="qty" type="text" id="jumlah" value="" >
+    
                                             </div>
                                         </div>
 
@@ -54,8 +49,9 @@
                                             <a href="#" class="primary-btn">Pesan</a>
                                             </div>
                                         </div>
-                 </div>
-                
+                </form>
+                </div>
+                 
                 </div>   
             </div>
         </div>
