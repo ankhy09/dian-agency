@@ -168,24 +168,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="copyright-reserved">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-text">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Dian Agency Digital Printing
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
-                        <div class="payment-pic">
-                            <img src="img/payment-method.png" alt="">
-                        </div>
-                    </div>
+
+                <div class="col-lg-6">
+                <div class="footer-right">
+                             <div class="copyright-text">
+                                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Dian Agency Digital Printing
+                                        </div>
+                </div>
+                                        
                 </div>
             </div>
         </div>
+       
     </footer>
     <!-- Footer Section End -->
 
