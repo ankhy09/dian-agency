@@ -1,9 +1,13 @@
 @extends ('layout.main')
+@section('tombol')
+<div class="panel-heading">
+              <button  class="btn btn-light" onclick="history.go(-1);">
+              <i class="fas fa-long-arrow-alt-left"></i>
+            </button>
+            @endsection
 @section('content')
-    <div class="panel-heading">
-          Edit
-        </div>
-        <div class="panel-body" style="padding: 20px;">
+@section('judul_halaman', 'EDIT')
+  
             <!-- form input data--->
             @if ($errors->any())
             <ul class="alert alert-danger">
@@ -13,12 +17,11 @@
             </ul>
             @endif
 
-                <form method="POST" action="{{ route('produk.update', $datas->id_produk)}}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('ukuran.update', $datas->id_ukuran)}}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                         {{ method_field('PUT') }}
                             {{ csrf_field() }}
-                            @include ('admin.produk.form', ['formMode' => 'edit'])
+                            @include ('admin.ukuran.form', ['formMode' => 'edit'])
                 </form>
 
             <!-- form input data--->
-    </div>
 @endsection

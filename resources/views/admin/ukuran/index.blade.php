@@ -1,12 +1,21 @@
 @extends ('layout.main')
+@section('tombol')
+<div class="panel-heading">
+              <button  class="btn btn-light" onclick="history.go(-1);">
+              <i class="fas fa-long-arrow-alt-left"></i>
+            </button>
+            @endsection
 @section('content')
-<h1>hallo</h1>
+@section('judul_halaman', 'ukuran')
+
 <div class="table-responsive">
+
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead class="sorting_asc">
-            <h1>{{ $tes->nama_produk}}</h1>
+     
                     <tr>
                         <th width="10px">No</th>
+                        <th>Nama Produk</th>
                         <th>Ukuran</th>
                         <th>Harga</th>
                         <th>Action</th>
@@ -14,12 +23,31 @@
             </thead>
             <tbody>
                        
-            </table>
+            @foreach($datas as $item)        
+                                         <tr>
+                                             <td>{{ $loop->iteration }}</td>
+                                             <td>{{ $item->produk->nama_produk}}</td>
+                                             <td>{{ $item->ukuran }}</td>
+                                             <td>{{ $item->harga }}</td>
+                                             <td>
+                                                 <a href="{{ url('/ukuran/' . $item->id_ukuran . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
+                                                 <form method="POST" action="{{ url('/ukuran' . '/' . $item->id_ukuran) }}" accept-charset="UTF-8" style="display:inline">
+                                                             {{ method_field('DELETE') }}
+                                                             {{ csrf_field() }}
+                                                             <button type="submit" class="btn btn-danger btn-sm" title="Delete node" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                         </form>
+                                             </td>
+                                         </tr>
+                                         @endforeach
+                                     </tbody>
+                         </table>
            
 
         <a href="{{ url('/ukuran/create') }}"class="btn btn-primary btn-m ">Tambah</a>
 
         </div>
+
+
 
         
 @endsection

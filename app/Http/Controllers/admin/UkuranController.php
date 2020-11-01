@@ -12,8 +12,8 @@ class UkuranController extends Controller
 
     public function index($id)
     {
-        $datas = Ukuran::findOrFail('$id','id_produk');
-        return view('admin.ukuran.index', compact('tes'));
+        $datas = Ukuran::where('id_produk', '=', $id)->take(10)->get();
+        return view('admin.ukuran.index', compact('datas'));
     }
 
     protected function validator(array $data)
@@ -36,7 +36,7 @@ class UkuranController extends Controller
         $post->ukuran = $request->get('ukuran');
         $post->harga = $request->get('harga');
         $post->save();
-        return redirect('ukuran')->with('flash_message', 'rute added!');
+        return redirect('ukuran')->with('flash_message', 'berhasil ditambahkan');
 
     }
     

@@ -43,13 +43,6 @@ class ProdukController extends Controller
         return view('admin.produk.edit', compact('datas'));
     }
 
-    public function detailproduk($id) {
-
-        $datas = Produk::findOrFail($id);
-        // dd($datas);
-        return view('admin.produk.detailproduk', compact('datas'));
-    
-    }
 
 
 public function update(Request $request, $id)

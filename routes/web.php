@@ -13,10 +13,9 @@
 
 
 Route::resource('/produk', 'admin\\ProdukController');
-Route::get('produk/create', 'admin\\ProdukController@create');
-// Route::resource('/ukuran', 'admin\\UkuranController');
+route::get('/ukuran/create', 'admin\\UkuranController@create');
+Route::get('/ukuran/{id}', 'admin\\UkuranController@index');
 
-Route::get('/ukuran/{id}', 'admin\\UkuranController@index')->name('admin.ukuran.index');
 
 
 Route::get('/','PagesController@home');
