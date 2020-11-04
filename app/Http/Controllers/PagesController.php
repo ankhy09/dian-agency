@@ -36,17 +36,22 @@ class PagesController extends Controller
 
     public function pemesananxbanner()
     {
-        return view ('user.xbanner');
+        $datas = Ukuran::where('id_produk', '=', '9')->take(10)->get();
+        $desc = Produk::where('id_produk', '=', '9')->first();
+        return view('user.xbanner', compact('datas','desc'));
     }
+
 
     public function pemesananposter()
     {
-        return view ('user.poster');
+        $datas = Ukuran::where('id_produk', '=', '10')->take(10)->get();
+        return view('user.poster', compact('datas'));
     }
 
     public function pemesananpin()
     {
-        return view ('user.pin');
+        $datas = Ukuran::where('id_produk', '=', '11')->take(10)->get();
+        return view('user.pin', compact('datas'));
     }
 
     public function cart()

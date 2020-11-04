@@ -22,9 +22,13 @@ route::get('/ukuran/{id}/', 'admin\\UkuranController@index');
 
 Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
+
 Route::get('/pesanspanduk','PagesController@pemesananspanduk');
 Route::get('/pesanxbanner','PagesController@pemesananxbanner');
 Route::get('/pesanposter','PagesController@pemesananposter');
+Route::get('/pesanpin','PagesController@pemesananpin');
+
+
 Route::get('/cart','PagesController@cart');
 
 Route::get('/login','PagesController@login');

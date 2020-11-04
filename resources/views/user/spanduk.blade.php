@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 order-1 order-lg-2">
+
+                    <!-- gambar -->
                     
                 </div>
-               
-
                 <div class="col-lg-5 order-1 order-lg-2">   
                 <form method="post" action="#">
                     @csrf               
