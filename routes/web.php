@@ -13,6 +13,8 @@
 
 
 Route::resource('/produk', 'admin\\ProdukController');
+route::get('/admin', 'admin\\AdminController@homeadmin');
+
 
 
 route::get('/ukuran/{id}/create', 'admin\\UkuranController@create');

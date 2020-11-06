@@ -128,16 +128,16 @@
                 </div>
                 <nav class="nav-menu mobile-menu">
                     <ul>
-                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="#">Pemesanan Jasa Cetak</a>
                             <ul class="dropdown">
-                                <li><a href="#">Spanduk</a></li>
-                                <li><a href="#">X Banner</a></li>
-                                <li><a href="#">Poster</a></li>
-                                <li><a href="#">Pin</a></li>
+                                <li><a href="{{ url('/pesanspanduk') }}">Spanduk</a></li>
+                                <li><a href="{{ url('/pesanxbanner') }}">X Banner</a></li>
+                                <li><a href="{{ url('/pesanposter') }}">Poster</a></li>
+                                <li><a href="{{ url('/pesanpin') }}">Pin</a></li>
                             </ul>
                         </li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="{{ url('/contact') }}">Contact</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>

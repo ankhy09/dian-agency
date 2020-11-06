@@ -5,7 +5,7 @@
         <div class="container">
             <div class="map-inner">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48158.305462977965!2d-74.13283844036356!3d41.02757295168286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e440473470d7%3A0xcaf503ca2ee57958!2sSaddle%20River%2C%20NJ%2007458%2C%20USA!5e0!3m2!1sen!2sbd!4v1575917275626!5m2!1sen!2sbd"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1882.5594867433545!2d121.43718082972065!3d1.1572339252580803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd74e7cb8660660b9!2sDian%20Agency!5e0!3m2!1sid!2sid!4v1604643001843!5m2!1sid!2sid"
                     height="610" style="border:0" allowfullscreen="">
                 </iframe>
                 <div class="icon">
@@ -31,7 +31,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Address:</span>
-                                <p>60-49 Road 11378 New York</p>
+                                <p>Jl. M.T. Hariono No. 68 Kel. Buol Kec. Biau Kab. Buol</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -40,7 +40,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Phone:</span>
-                                <p>+65 11.188.888</p>
+                                <p>+62 82.111.347.331</p>
                             </div>
                         </div>
                         <div class="cw-item">
@@ -49,7 +49,7 @@
                             </div>
                             <div class="ci-text">
                                 <span>Email:</span>
-                                <p>hellocolorlib@gmail.com</p>
+                                <p>dianagency@gmail.com</p>
                             </div>
                         </div>
                     </div>

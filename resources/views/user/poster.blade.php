@@ -4,7 +4,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 order-1 order-lg-2">
-                    
+                        <img src="user/img/poster.jpg" height="250px" width="250px">
+                        <h3><strong>POSTER</strong></h3>
+                        {{ $desc->deskripsi_produk }}
                 </div>
                
 

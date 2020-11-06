@@ -4,9 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 order-1 order-lg-2">
-                    
+                    <img src="user/img/xbanner.jpg" height="250px" width="250px">
+                    <h3><strong>X-BANNER</strong></h3>
+                    {{ $desc->deskripsi_produk }}
                 </div>
-               
 
                 <div class="col-lg-5 order-1 order-lg-2">   
                 <form method="post" action="#">
@@ -54,11 +55,7 @@
                  
                 </div>   
             </div>
-            <div class="row">
-                <div class="col-12">
-                {{ $desc->deskripsi_produk }}
-                </div>
-            </div>
+
         </div>
         
         
