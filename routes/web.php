@@ -13,6 +13,7 @@
 
 
 Route::resource('/produk', 'admin\\ProdukController');
+Route::resource('/datapesanan', 'admin\\PemesananController');
 route::get('/admin', 'admin\\AdminController@homeadmin');
 
 
