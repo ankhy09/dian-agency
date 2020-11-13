@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="login-form">
-                        <h2>{{ __('Login') }}</h2>
+                        <h2>{{ __('Login Admin') }}</h2>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="group-input">

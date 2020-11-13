@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin | Log in (v2)</title>
+  <title>Admin LTE 3 | Log in (v2)</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('haladmin/plugins/fontawesome-free/css/all.min.css')}}">
