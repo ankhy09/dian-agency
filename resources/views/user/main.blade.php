@@ -46,7 +46,25 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                    <a href="/login" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                @guest
+                    <a href="/login" class="login-panel"><i class="fa fa-sign-in"></i>Login</a>
+                    @if (Route::has('register'))
+                                    <a class="login-panel" href="{{ route('register') }}" style="margin-right:5px;"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
+                                    @endif
+                                    @else
+                                    <a class="login-panel"><i class="fa fa-user"></i>{{ Auth::user()->nama }} <span class="caret"></span></a>
+                                    <ul class="dropdown">
+                                        <li> 
+                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                                    </ul>
+                                    @endguest
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>

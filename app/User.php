@@ -15,9 +15,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $primaryKey= 'id_pelanggan';
     protected $fillable = [
-        'name', 'email', 'password',
+        'nama', 'no_telp', 'email', 'password',
     ];
+
+    public $timestamps = false;
 
     /**
      * The attributes that should be hidden for arrays.
@@ -36,4 +39,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $table = 'pelanggan';
 }
