@@ -25,6 +25,8 @@ route::get('/ukuran/{id}/', 'admin\\UkuranController@index');
 
 Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
+Route::get('/akunsaya','PelangganController@akunsaya');
+Route::get('/orderansaya','PelangganController@orderansaya');
 
 Route::get('/pesanspanduk','PagesController@pemesananspanduk');
 Route::get('/pesanxbanner','PagesController@pemesananxbanner');

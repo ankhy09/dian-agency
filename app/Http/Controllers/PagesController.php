@@ -14,10 +14,6 @@ class PagesController extends Controller
         return view('user.home', compact('datas'));
     }
 
-    public function pemesanan()
-    {
-        return view ('user.pemesanan');
-    }
     public function contact()
     {
         return view ('user.contact');
