@@ -14,6 +14,7 @@
 
 Route::resource('/produk', 'admin\\ProdukController');
 Route::resource('/datapesanan', 'admin\\PemesananController');
+<<<<<<< HEAD
 
 route::group(['prefix'=>'admin'], function(){
     Route::get('/login','AuthAdmin\LoginController@showLoginForm')->name('admin.login');
@@ -22,6 +23,9 @@ route::group(['prefix'=>'admin'], function(){
 });
 
 
+=======
+route::get('/admin', 'admin\\AdminController@index');
+>>>>>>> 594946ac7ca7ae577e65bfaaf41e3f1b6fdc82a5
 
 
 
@@ -32,6 +36,8 @@ route::get('/ukuran/{id}/', 'admin\\UkuranController@index');
 
 Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
+Route::get('/akunsaya','PelangganController@akunsaya');
+Route::get('/orderansaya','PelangganController@orderansaya');
 
 Route::get('/pesanspanduk','PagesController@pemesananspanduk');
 Route::get('/pesanxbanner','PagesController@pemesananxbanner');

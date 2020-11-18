@@ -11,9 +11,15 @@
                     <form method="POST" action="{{ route('admin.login.submit') }}">
                         @csrf
                         <div class="group-input">
+<<<<<<< HEAD
                                 <label for="username">{{ __('username') }}</label>
                                 <input id="username" type="input" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                                 @error('username')
+=======
+                                <label for="email">{{ __('E-Mail Address') }}</label>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                @error('email')
+>>>>>>> 594946ac7ca7ae577e65bfaaf41e3f1b6fdc82a5
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

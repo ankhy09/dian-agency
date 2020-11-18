@@ -51,10 +51,21 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+<<<<<<< HEAD
 
         'ad-api' => [
             'driver' => 'token',
             'provider' => 'admin',
+=======
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
+>>>>>>> 594946ac7ca7ae577e65bfaaf41e3f1b6fdc82a5
             'hash' => false,
         ],
     ],
@@ -80,6 +91,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
         ],
 
         'admin' => [
@@ -113,6 +128,11 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 20,
         ],
     ],
 
