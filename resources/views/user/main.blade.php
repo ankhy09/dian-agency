@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            <li class="cart-price">Rp. 150.00</li>
                         </ul>
                     </div>
                 </div>
@@ -156,6 +156,7 @@
                             </ul>
                         </li>
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
+                        <li><a href="{{ url('/akunsaya') }}">Akun Saya</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>
