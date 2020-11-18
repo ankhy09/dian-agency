@@ -14,18 +14,14 @@
 
 Route::resource('/produk', 'admin\\ProdukController');
 Route::resource('/datapesanan', 'admin\\PemesananController');
-<<<<<<< HEAD
 
 route::group(['prefix'=>'admin'], function(){
     Route::get('/login','AuthAdmin\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login','AuthAdmin\LoginController@login')->name('admin.login.submit');
-    route::get('/', 'admin\\AdminController@homeadmin')->name('admin.home');
+    route::get('/', 'admin\\AdminController@index')->name('admin.homeadmin');
 });
 
 
-=======
-route::get('/admin', 'admin\\AdminController@index');
->>>>>>> 594946ac7ca7ae577e65bfaaf41e3f1b6fdc82a5
 
 
 

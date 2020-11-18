@@ -51,21 +51,10 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-<<<<<<< HEAD
 
         'ad-api' => [
             'driver' => 'token',
             'provider' => 'admin',
-=======
-        'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins',
-        ],
-
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'admins',
->>>>>>> 594946ac7ca7ae577e65bfaaf41e3f1b6fdc82a5
             'hash' => false,
         ],
     ],
