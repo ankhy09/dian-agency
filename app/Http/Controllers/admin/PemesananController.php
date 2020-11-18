@@ -9,6 +9,11 @@ use App\Http\Controllers\Controller;
 
 class PemesananController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function index() {
         
         $datas = Pemesanan::orderBy('id_pemesanan', 'DESC')->paginate(10);

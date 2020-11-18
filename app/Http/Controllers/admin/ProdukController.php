@@ -9,6 +9,12 @@ use App\Http\Controllers\Controller;
 
 class ProdukController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    
     public function index() {
         
         $datas = Produk::orderBy('id_produk', 'DESC')->paginate(10);

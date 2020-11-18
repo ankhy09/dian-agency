@@ -14,7 +14,14 @@
 
 Route::resource('/produk', 'admin\\ProdukController');
 Route::resource('/datapesanan', 'admin\\PemesananController');
-route::get('/admin', 'admin\\AdminController@homeadmin');
+
+route::group(['prefix'=>'admin'], function(){
+    Route::get('/login','AuthAdmin\LoginController@showLoginForm')->name('admin.login');
+    Route::post('/login','AuthAdmin\LoginController@login')->name('admin.login.submit');
+    route::get('/', 'admin\\AdminController@homeadmin')->name('admin.home');
+});
+
+
 
 
 

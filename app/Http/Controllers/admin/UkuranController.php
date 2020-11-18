@@ -10,6 +10,11 @@ use App\Produk;
 class UkuranController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+    
     public function index()
     {
         return redirect('produk')->with('flash_message', 'eror');
