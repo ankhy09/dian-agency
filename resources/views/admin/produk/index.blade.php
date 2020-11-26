@@ -8,6 +8,7 @@
                             <th width="10px">No</th>
                             <th>Nama</th>
                             <th>Deskripsi</th>
+                            <th>Gambar</th>
                             <th>Action</th>
                             </tr>
             </thead>
@@ -18,6 +19,7 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->nama_produk }}</td>
                                 <td>{{ $item->deskripsi_produk }}</td>
+                                <td><img src="{{asset('images/'. $item->gambar)}}" style="max-height: 200px" alt=""></div></td>
                                 <td>
                                     <a href="{{ url('/produk/' . $item->id_produk . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
                                     <a href="{{ url('/ukuran', $item->id_produk)  }}"class="btn btn-primary btn-sm ">Detail</a>

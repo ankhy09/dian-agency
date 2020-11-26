@@ -164,10 +164,11 @@
         </div>
     </header>
     <!-- Header End -->
-
+    <br>
 
     @yield('content')
 
+        <br>
        <!-- Footer Section Begin -->
     <footer class="footer-section">
         <div class="container">

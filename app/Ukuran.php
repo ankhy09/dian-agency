@@ -17,5 +17,10 @@ class Ukuran extends Model
     {
         return $this->belongsTo(Produk::class,'id_produk');
     }
+    
+    public function pesanan_detail() 
+	{
+	     return $this->hasMany('App\PesananDetail','barang_id', 'id');
+	}
 }
 

@@ -5,7 +5,7 @@
             <div class="row">
             <div class="col-lg-5 order-1 order-lg-2">
                     <img src="user/img/spanduk.jpg" height="250px" width="250px">
-                    <h3><strong>SPANDUK</strong></h3>
+                    <h3><strong>$datas->nama_produk</strong></h3>
                     {{ $desc->deskripsi_produk }}
             </div>
 

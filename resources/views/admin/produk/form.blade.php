@@ -10,6 +10,12 @@
      {!! $errors->first('deskripsi_produk', '<p class="help-block">:message</p>') !!}
 </div>
 
+<div class="form-group {{ $errors->has('gambar') ? 'has-error' : ''}}">
+    <label for="gambar" class="control-label">{{ 'Gambar' }}</label>
+    <input class="form-control" name="gambar" type="file" id="gambar" value="{{ isset($datas->gambar) ? $datas->gambar : ''}}" >
+     {!! $errors->first('gambar', '<p class="help-block">:message</p>') !!}
+</div>
+
 
 <div class="form-group">
 <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">

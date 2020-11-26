@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Produk;
 use App\Ukuran;
 use App\User;
-use App\Http\Controllers\Controller;
 use App\Pemesanan;
 use App\Transaksi;
 

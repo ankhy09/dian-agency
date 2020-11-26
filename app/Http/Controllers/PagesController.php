@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $datas = Produk::orderBy('id_produk', 'DESC')->paginate(10);
+        $datas = Produk::orderBy('id_produk', 'DESC')->paginate(4);
         return view('user.home', compact('datas'));
     }
 

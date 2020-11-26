@@ -21,24 +21,38 @@ class ProdukController extends Controller
         return view('admin.produk.index', compact('datas'));
     }
 
+    
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'nama_produk' => ['required', 'string'],
+            'deskripsi_produk' => ['required', 'string'],
+            'gambar' => ['required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'],
+        ]);
+    }
 
     public function create()
     {
         return view('admin.produk.create');
     }
 
-    public function store(Request $request) {
-        $validatedData = $request->validate([
-            'nama_produk' => ['required', 'string'],
-            'deskripsi_produk' => ['required', 'string'],
+    public function store(Request $request)
+    {
+
+        $request->validate([
+            'gambar'         =>  'required|image|max:2048'
         ]);
 
         $post = new Produk;
         $post->nama_produk = $request->get('nama_produk');
         $post->deskripsi_produk = $request->get('deskripsi_produk');
+        $image = $request->file('gambar');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+        $post->gambar = $new_name;
         $post->save();
-        return redirect('produk')->with('flash_message', 'rute added!');
 
+        return redirect('produk')->with('flash_message', 'Produk Berhasil Ditambahkan!');
     }
     
     public function edit($id) {
@@ -49,22 +63,35 @@ class ProdukController extends Controller
 
 
 
-public function update(Request $request, $id)
-{
-    $validatedData = $request->validate([
-        'nama_produk' => ['required', 'string'],
-        'deskripsi_produk' => ['required', 'string'],
-    ]);
+    public function update(Request $request, $id)
+    {
 
-    $form_data = array(
-        'nama_produk' =>$request->nama_produk,
-        'deskripsi_produk' => $request->deskripsi_produk,
+        $image_name = $request->hidden_image;
+        $image = $request->file('gambar');
+        if($image != '')
+        {
+            $image_name = rand() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $image_name);
+        }
+        else
+        {
+            $request->validate([
+                'nama_produk' => ['required', 'string'],
+                'deskripsi_produk' => ['required', 'string'],
+            ]);
+        }
         
-    );
-    Produk::where('id_produk',$id)->update($form_data);
+        
+        $form_data = array(
+            'nama_produk'       =>   $request->nama_produk,
+            'deskripsi_produk'     =>   $request->deskripsi_produk,
+            'gambar'       =>   $image_name,
+            
+        );
+        produk::where('id_produk',$id)->update($form_data);
 
-    return redirect()->to('produk')->with('flash_message', 'graph updated!');
-}
+        return redirect()->to('/produk')->with('flash_message', 'Produk Berhasil updated!');
+    }
 
     public function destroy($id)
     {

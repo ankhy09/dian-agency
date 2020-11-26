@@ -41,4 +41,10 @@ class User extends Authenticatable
     ];
 
     protected $table = 'pelanggan';
+
+
+    public function pesanan() 
+    {
+         return $this->hasMany(Pesanan::class,'id_pelanggan');
+    }
 }
