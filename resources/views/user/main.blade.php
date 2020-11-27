@@ -46,17 +46,18 @@
                     </div>
                 </div>
                 <div class="ht-right">
-                @guest
+
+                 @guest
                     <a href="/login" class="login-panel"><i class="fa fa-sign-in"></i>Login</a>
-                    @if (Route::has('register'))
-                                    <a class="login-panel" href="{{ route('register') }}" style="margin-right:5px;"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
-                                    @endif
-                                    @else
-                                    <a class="login-panel"><i class="fa fa-user"></i>{{ Auth::user()->nama }} <span class="caret"></span></a>
-                                    <ul class="dropdown">
-                                        <li> 
-                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                        @if (Route::has('register'))
+                            <a class="login-panel" href="{{ route('register') }}" style="margin-right:5px;"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
+                        @endif
+                        @else
+                        <a class="login-panel"><i class="fa fa-user"></i>{{ Auth::user()->nama }} <span class="caret"></span></a>
+                            <ul class="dropdown">
+                                <li> 
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -64,7 +65,8 @@
                                     </form>
                                 </li>
                                     </ul>
-                                    @endguest
+                @endguest
+
                     <div class="top-social">
                         <a href="#"><i class="ti-facebook"></i></a>
                         <a href="#"><i class="ti-twitter-alt"></i></a>
@@ -74,20 +76,32 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="inner-header">
                 <div class="row">
-                    <div class="col-lg-2 col-md-2">
+                    <div class="col-lg-1">
                         <div class="logo">
                             <a href="./index.html">
-                                <img src="img/logo.png" alt="">
+                                <img src="images/logo.jpg" style="max-height: 80px" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-7">
+                        <div class="">
+                            <div class="">
+                            <h2> DIAN AGENCY DIGITAL PRINTING <h2/>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-3 text-right col-md-3">
+                    <div class="col-lg-3 text-right col-md-1">
                         <ul class="nav-right">
+                            <li class="heart-icon">
+                                <a href="#">
+                                    <i class="icon_heart_alt"></i>
+                                    <span>1</span>
+                                </a>
+                            </li>
                             <li class="cart-icon">
                                 <a href="#">
                                     <i class="icon_bag_alt"></i>
@@ -113,7 +127,7 @@
                                                     <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
                                                     <td class="si-text">
                                                         <div class="product-selected">
-                                                            <p>Rp.60.00 x 1</p>
+                                                            <p>$60.00 x 1</p>
                                                             <h6>Kabino Bedside Table</h6>
                                                         </div>
                                                     </td>
@@ -126,7 +140,7 @@
                                     </div>
                                     <div class="select-total">
                                         <span>total:</span>
-                                        <h5>Rp.120.00</h5>
+                                        <h5>$120.00</h5>
                                     </div>
                                     <div class="select-button">
                                         <a href="#" class="primary-btn view-card">VIEW CARD</a>
@@ -134,19 +148,19 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="cart-price">Rp. 150.00</li>
+                            <li class="cart-price">$150.00</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="nav-item">
             <div class="container">
                 <div class="nav-depart">
                 </div>
                 <nav class="nav-menu mobile-menu">
-                    <ul>
-                        <li><a href="/">Home</a></li>
+                        <li><a href="{{ url('home') }}">Home</a></li>
                         <li><a href="#">Pemesanan Jasa Cetak</a>
                             <ul class="dropdown">
                                 <li><a href="{{ url('/pesanspanduk') }}">Spanduk</a></li>

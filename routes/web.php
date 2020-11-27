@@ -30,7 +30,7 @@ route::resource('/ukuran', 'admin\\UkuranController');
 route::get('/ukuran/{id}/', 'admin\\UkuranController@index');
 
 
-Route::get('/','PagesController@home');
+Route::get('/home','PagesController@home');
 Route::get('/contact','PagesController@contact');
 Route::get('/akunsaya','PelangganController@akunsaya');
 Route::get('/orderansaya','PelangganController@orderansaya');
@@ -40,7 +40,9 @@ Route::get('/pesanxbanner','PagesController@pemesananxbanner');
 Route::get('/pesanposter','PagesController@pemesananposter');
 Route::get('/pesanpin','PagesController@pemesananpin');
 
-Route::get('/pesan/{id}','PesamController@index');
+Route::get('/pesan/{id}','PesanController@index');
+Route::post('/pesan/{id}','PesanController@pesan');
+
 
 Route::get('/cart','PagesController@cart');
 
@@ -50,4 +52,4 @@ Route::get('/register','PagesController@register');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

@@ -10,7 +10,7 @@
                         <img class="card-img-top" src="{{url('images/'.$item->gambar) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><strong>{{ $item->nama_produk }}</strong></h5>
-                            <a href="{{ url('/pesanspanduk') }}" class="primary-btn">PESAN</a>
+                            <a href="{{ url('/pesan', $item->id_produk)  }}" class="primary-btn">PESAN</a>
                         </div>
                     </div>
                 </div>
