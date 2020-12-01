@@ -26,7 +26,7 @@
                             <div class="row">
                                 <div class="col-lg-12 col-md-12">
                                     <label for="nama_procject">Nama Project</label>                                               
-                                        <input class="form-control" name="nama_project" type="text" id="nama_project" value="" required="" >
+                                        <input class="form-control" name="nama" type="text" id="nama_project" value="" required="" >
                                 </div>
                             </div>
                             <br>
@@ -36,8 +36,8 @@
                                     <div class="select-option">
                                     
                                         <select class="sorting">
-                                        @foreach($ukurans as $item)
-                                            <option value="{{$item->id_ukuran}}" selected>{{$item->ukuran}} cm</option>
+                                            @foreach($ukurans as $item)
+                                                <option value="{{$item->id_ukuran}}" selected>{{$item->ukuran}} cm</option>
                                             @endforeach
                                         </select>
                                         
@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="col-lg-5 col-md-12">
                                     <label for="jumlah">Jumlah Pesan</label>                                               
-                                        <input class="form-control" name="qty" type="text" value="" required="" >
+                                        <input class="form-control" name="jumlah" type="text" value="" required="" >
                                 </div>
                             </div>
                             <br>
@@ -53,17 +53,18 @@
                                 <div class="col-lg-12 col-md-12">
                                 <label for="gambar">Upload File Desain<span>*</span></label>
                                         <div class="custom-file mb-3">
-                                            <input type="file" class="custom-file-input" id="customFile" name="filename" required="">
+                                            <input type="file" class="custom-file-input" id="customFile" name="filecetak" enctype="multipart/form-data" required="">
                                             <label class="custom-file-label" for="customFile">Choose file</label>
                                         </div>
                                 </div>
                             </div>
-
+<!-- 
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                 <label for="harga"><strong>Harga: Rp.{{ number_format($item->harga)}}</strong></label>
                                 </div>
-                            </div>
+                            </div> -->
+
                             <br>
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">

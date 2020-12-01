@@ -30,9 +30,9 @@ route::resource('/ukuran', 'admin\\UkuranController');
 route::get('/ukuran/{id}/', 'admin\\UkuranController@index');
 
 
-Route::get('/home','PagesController@home');
+Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
-Route::get('/akunsaya','PelangganController@akunsaya');
+Route::get('/profile','PelangganController@profile');
 Route::get('/orderansaya','PelangganController@orderansaya');
 
 Route::get('/pesanspanduk','PagesController@pemesananspanduk');

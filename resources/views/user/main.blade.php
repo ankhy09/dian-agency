@@ -31,6 +31,12 @@
         <div class="loader"></div>
     </div>
 
+
+
+
+
+
+
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
@@ -48,7 +54,7 @@
                 <div class="ht-right">
 
                  @guest
-                    <a href="/login" class="login-panel"><i class="fa fa-sign-in"></i>Login</a>
+                    <a href="{{ route('login') }}" class="login-panel"><i class="fa fa-sign-in"></i>Login</a>
                         @if (Route::has('register'))
                             <a class="login-panel" href="{{ route('register') }}" style="margin-right:5px;"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
                         @endif
@@ -160,7 +166,7 @@
                 <div class="nav-depart">
                 </div>
                 <nav class="nav-menu mobile-menu">
-                        <li><a href="{{ url('home') }}">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="#">Pemesanan Jasa Cetak</a>
                             <ul class="dropdown">
                                 <li><a href="{{ url('/pesanspanduk') }}">Spanduk</a></li>
@@ -170,7 +176,6 @@
                             </ul>
                         </li>
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
-                        <li><a href="{{ url('/akunsaya') }}">Akun Saya</a></li>
                     </ul>
                 </nav>
                 <div id="mobile-menu-wrap"></div>

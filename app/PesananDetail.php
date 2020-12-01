@@ -8,11 +8,11 @@ class PesananDetail extends Model
 {  
     public function pesanan()
     {
-        return $this->belongsTo(pesanan::class,'id_pesanan');
+        return $this->belongsTo(Pesanan::class,'id_pesanan');
     }
 
-    public function produk()
+    public function ukuran()
     {
-        return $this->belongsTo(produk::class,'id_produk');
+        return $this->belongsTo(Ukuran::class,'id_ukuran');
     }
 }

@@ -20,7 +20,7 @@ class Ukuran extends Model
     
     public function pesanan_detail() 
 	{
-	     return $this->hasMany('App\PesananDetail','barang_id', 'id');
+        return $this->hasMany(PesananDetail::class,'id_ukuran');
 	}
 }
 

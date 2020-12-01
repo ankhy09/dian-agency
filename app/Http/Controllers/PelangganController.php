@@ -12,9 +12,9 @@ use App\Transaksi;
 
 class PelangganController extends Controller
 {
-    public function akunsaya()
+    public function profile()
     {
-        return view ('user.akunsaya');
+        return view ('user.profile');
     }
     public function orderansaya()
     {
