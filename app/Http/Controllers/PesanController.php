@@ -30,7 +30,7 @@ class PesanController extends Controller
 
     public function pesan(Request $request, $id)
     {
-        $ukurans = Ukuran::where('id_ukuran', $id)->first();
+        $ukurans = Ukuran::where('id_produk', '==', $id);
         $tanggal = Carbon::now();
 
         //simpan data pesanan ke database
@@ -47,16 +47,18 @@ class PesanController extends Controller
 
         $pesanan_detail = new PesananDetail;
         $pesanan_detail->nama_project = $request->nama;
-        $pesanan_detail->id_ukuran = $ukurans->id_ukuran;
+        $pesanan_detail->id_ukuran = $request->ukuran;
         $pesanan_detail->id_pesanan = $pesanan_baru->id_pesanan;
         $pesanan_detail->qty = $request->jumlah;
         $pesanan_detail->file = $request->filecetak;
+        $idUkuran = $pesanan_detail->id_ukuran;
+        $ukurans = Ukuran::where('id_ukuran', $idUkuran)->first();
         $pesanan_detail->jumlah_harga = $ukurans->harga*$request->jumlah;
         $pesanan_detail->save();
 
 
         //update total harga
-        return redirect('home')->with('flash_message', 'Pesanan berhasil ditambahkan ke dalam Cart!');
+        return redirect('/')->with('flash_message', 'Pesanan berhasil ditambahkan ke dalam Cart!');
         
 
     }

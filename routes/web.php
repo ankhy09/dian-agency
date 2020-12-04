@@ -13,7 +13,7 @@
 
 
 Route::resource('/produk', 'admin\\ProdukController');
-Route::resource('/datapesanan', 'admin\\PemesananController');
+
 
 route::group(['prefix'=>'admin'], function(){
     Route::get('/login','AuthAdmin\LoginController@showLoginForm')->name('admin.login');
@@ -34,11 +34,6 @@ Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
 Route::get('/profile','PelangganController@profile');
 Route::get('/orderansaya','PelangganController@orderansaya');
-
-Route::get('/pesanspanduk','PagesController@pemesananspanduk');
-Route::get('/pesanxbanner','PagesController@pemesananxbanner');
-Route::get('/pesanposter','PagesController@pemesananposter');
-Route::get('/pesanpin','PagesController@pemesananpin');
 
 Route::get('/pesan/{id}','PesanController@index');
 Route::post('/pesan/{id}','PesanController@pesan');

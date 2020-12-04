@@ -25,10 +25,20 @@
 
 <!-- halaman pemesanan -->
           <li class="nav-item">
+            <a href="{{ url('/pesan') }}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Data Pemesanan
+              </p>
+            </a>
+          </li>
+
+
+          <li class="nav-item">
             <a href="{{ url('/pesanan') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Data Pemesan
+                Data Pelanggan
               </p>
             </a>
           </li>

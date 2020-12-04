@@ -20,7 +20,7 @@
                                 @enderror
                             </div>
                             <div class="group-input">
-                                <label for="name">{{ __('Nomor Telepoon') }}</label>
+                                <label for="name">{{ __('Nomor Telephone') }}</label>
                                 <input type="number" id="no_telp" class="form-control @error('no_telp') is-invalid @enderror" name="no_telp" value="{{ old('no_telp') }}" required autocomplete="no_telp" autofocus>
                                 @error('no_telp')
                                     <span class="invalid-feedback" role="alert">

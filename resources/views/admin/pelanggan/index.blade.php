@@ -1,6 +1,6 @@
 @extends ('layout.main')
 @section('content')
-@section('judul_halaman', 'Data Produk')
+@section('judul_halaman', 'Data Pelanggan')
 <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
             <thead class="sorting_asc">

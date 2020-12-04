@@ -15,7 +15,7 @@
                     </nav>
                 </div>
                 <div class="col-lg-5 order-1 order-lg-2 mt-1">
-                        <img src="{{url('images/'.$datas->gambar) }}" height="250px" width="250px">
+                        <img src="{{url('/images/produk/'.$datas->gambar) }}" height="250px" width="250px">
                         <h3><strong>{{ $datas->nama_produk }}</strong></h3>
                         {{ $datas->deskripsi_produk }}
                 </div>  
@@ -34,13 +34,11 @@
                                 <div class="col-lg-5 col-md-12">
                                     <label for="fir">Ukuran</label>
                                     <div class="select-option">
-                                    
-                                        <select class="sorting">
+                                        <select name="ukuran" class="sorting">
                                             @foreach($ukurans as $item)
                                                 <option value="{{$item->id_ukuran}}" selected>{{$item->ukuran}} cm</option>
                                             @endforeach
                                         </select>
-                                        
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-12">

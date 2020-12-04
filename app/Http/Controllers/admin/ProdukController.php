@@ -48,7 +48,7 @@ class ProdukController extends Controller
         $post->deskripsi_produk = $request->get('deskripsi_produk');
         $image = $request->file('gambar');
         $new_name = rand() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $new_name);
+        $image->move(public_path('images/produk'), $new_name);
         $post->gambar = $new_name;
         $post->save();
 
@@ -71,7 +71,7 @@ class ProdukController extends Controller
         if($image != '')
         {
             $image_name = rand() . '.' . $image->getClientOriginalExtension();
-            $image->move(public_path('images'), $image_name);
+            $image->move(public_path('images/produk'), $image_name);
         }
         else
         {
