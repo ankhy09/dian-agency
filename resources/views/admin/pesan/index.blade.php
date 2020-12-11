@@ -1,49 +1,46 @@
 @extends ('layout.main')
 @section('content')
-@section('judul_halaman', 'Data Produk')
+@section('judul_halaman', 'Data Pesanan')
 <div class="table-responsive">
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-            <thead class="sorting_asc">
-                            <tr>
-                                <th width="10px">No</th>
-                                <th>Kode Pemesanan</th>
-                                <th>Nama Pelanggan</th>
-                                <th>Pesanan Cetak</th>
-                                <th>Ukuran</th>
-                                <th>QTY</th>
-                                <th>Harga Cetak</th>
-                                <th>Tanggal Pemesanan</th>
-                                <th>Status</th>
-                                <th>Action</th>
-                            </tr>
-            </thead>
-            <tbody>
-                        @foreach($datas as $item)
-                                         
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->id_pemesanan }}</td>
-                                <td>{{ $item->id_pelanggan }}</td>
-                                <td>{{ $item->id_ukuran }}</td>
-                                <td>{{ $item->ukuran }}</td>                              
-                                <td>{{ $item->qty }}</td>
-                                <td>{{ $item->harga }}</td>
-                                <td>{{ $item->tgl }}</td>
-                                <td>{{ $item->status }}</td>
-                                <td>
-                                    <a href="{{ url('/produk/' . $item->id_produk . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
-                                    <a href="{{ url('/ukuran', $item->id_produk)  }}"class="btn btn-primary btn-sm ">Detail</a>
-                                    <form method="POST" action="{{ url('/produk' . '/' . $item->id_produk) }}" accept-charset="UTF-8" style="display:inline">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete node" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                            </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
+                <thead class="sorting_asc">
+                    <tr>
+                        <th width="10px">No</th>
+                        <th>Nama Pelanggan</th>
+                        <th>Tanggal</th>
+                        <th>Total</th>
+                        <th>Kode</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php $no=1; ?>
+                @foreach($pesanans as $pesan)            
+                    <tr>
+                        <td>{{$no++}}</td>
+                        <td>{{$pesan->pelanggan->nama}}</td>
+                        <td>{{$pesan->tanggal}}</td>
+                        <td>Rp. {{ number_format($pesan->total_harga+$pesan->kode) }}</td>
+                        <td>{{$pesan->kode}}</td>
+                        <td> @if($pesan->status == 1)
+                                            Sudah Pesan & Belum dibayar
+                                        @else
+                                            Sudah dibayar 
+                                        @endif</td>
+                        <td>
+                            <a href="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}"class="btn btn-primary btn-sm " title="Detail Pesanan">Detail</a>
+                            <form method="POST" action="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}" accept-charset="UTF-8" style="display:inline">
+                                {{ method_field('DELETE') }}
+                                {{ csrf_field() }}
+                                <button type="submit" class="btn btn-danger btn-sm" title="Hapus Pesanan" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
-            {!! $datas->render() !!}
+            {!! $pesanans->render() !!}
         </div>
 
         

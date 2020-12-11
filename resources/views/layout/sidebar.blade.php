@@ -25,7 +25,7 @@
 
 <!-- halaman pemesanan -->
           <li class="nav-item">
-            <a href="{{ url('/pesan') }}" class="nav-link">
+            <a href="{{ url('/datapesanan') }}" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Data Pemesanan

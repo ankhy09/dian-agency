@@ -2,7 +2,7 @@
 @section('content')
 <div class="table-responsive">
 
-<h1>Selamat Datang <span style="color:brown">{{ Auth::user()->username }}</span></h1>
+<h1>Selamat Datang Administrator</span></h1>
 
         </div>
 

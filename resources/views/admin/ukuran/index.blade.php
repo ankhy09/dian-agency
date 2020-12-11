@@ -22,24 +22,23 @@
                     </tr>
             </thead>
             <tbody>
-                       
             @foreach($datas as $item)        
-                                         <tr>
-                                             <td>{{ $loop->iteration }}</td>
-                                             <td>{{ $item->produk->nama_produk}}</td>
-                                             <td>{{ $item->ukuran }}</td>
-                                             <td>{{ $item->harga }}</td>
-                                             <td>
-                                                 <a href="{{ url('/ukuran/' . $item->id_ukuran . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
-                                                 <form method="POST" action="{{ url('/ukuran' . '/' . $item->id_ukuran) }}" accept-charset="UTF-8" style="display:inline">
-                                                             {{ method_field('DELETE') }}
-                                                             {{ csrf_field() }}
-                                                             <button type="submit" class="btn btn-danger btn-sm" title="Delete node" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                                                         </form>
-                                             </td>
-                                         </tr>
-                                         @endforeach
-                                     </tbody>
+                <tr>
+                    <td>{{ $loop->iteration }}</td>
+                    <td>{{ $item->produk->nama_produk}}</td>
+                    <td>{{ $item->ukuran }}</td>
+                    <td>{{ $item->harga }}</td>
+                    <td>
+                        <a href="{{ url('/ukuran/' . $item->id_ukuran . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
+                        <form method="POST" action="{{ url('/ukuran' . '/' . $item->id_ukuran) }}" accept-charset="UTF-8" style="display:inline">
+                                    {{ method_field('DELETE') }}
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete node" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
                          </table>
            
 

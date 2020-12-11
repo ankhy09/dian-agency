@@ -6,9 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pesanan extends Model
 {
+
+    protected $table = 'pesanans';
+    protected $primaryKey= 'id_pesanan';
+    public $timestamps = false;
+
     public function pelanggan()
     {
-        return $this->belongsTo(Pelanggan::class,'id_pelanggan');
+        return $this->belongsTo(User::class,'id_pelanggan');
     }
 
     public function pesanan_detail()

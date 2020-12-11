@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="{{ asset('user/css/jquery-ui.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('user/css/style.css')}}" type="text/css">
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 
 <body>
@@ -48,37 +51,23 @@
                     </div>
                     <div class="phone-service">
                         <i class=" fa fa-phone"></i>
-                        +62 41.122.222
+                        +62 852.4112.2222
                     </div>
                 </div>
                 <div class="ht-right">
-
-                 @guest
-                    <a href="{{ route('login') }}" class="login-panel"><i class="fa fa-sign-in"></i>Login</a>
-                        @if (Route::has('register'))
-                            <a class="login-panel" href="{{ route('register') }}" style="margin-right:5px;"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
-                        @endif
-                        @else
-                        <a class="login-panel"><i class="fa fa-user"></i>{{ Auth::user()->nama }} <span class="caret"></span></a>
-                            <ul class="dropdown">
-                                <li> 
-                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </li>
-                                    </ul>
-                @endguest
-
-                    <div class="top-social">
-                        <a href="#"><i class="ti-facebook"></i></a>
-                        <a href="#"><i class="ti-twitter-alt"></i></a>
-                        <a href="#"><i class="ti-linkedin"></i></a>
-                        <a href="#"><i class="ti-pinterest"></i></a>
-                    </div>
+                    @guest
+                        <a href="{{ route('login') }}" class="login-panel"><i class="fa fa-sign-in"></i>Login</a>
+                    @if (Route::has('register'))
+                        <a class="login-panel" href="{{ route('register') }}" style="margin-right:5px;"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
+                    @endif
+                    @else
+                    <a class="login-panel" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>
+                                {{ __('Logout') }}</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a class="login-panel" style="margin-right:10px;"><i class="fa fa-user"></i>{{ Auth::user()->nama }} <span class="caret"></span></a>
                 </div>
             </div>
         </div>
@@ -102,59 +91,22 @@
                     </div>
                     <div class="col-lg-3 text-right col-md-1">
                         <ul class="nav-right">
-                            <li class="heart-icon">
-                                <a href="#">
-                                    <i class="icon_heart_alt"></i>
-                                    <span>1</span>
-                                </a>
-                            </li>
+                        <?php
+                            $pesanan_utama = \App\Pesanan::where('id_pelanggan', Auth::user()->id_pelanggan)->where('status',0)->first();
+                        if(!empty($pesanan_utama))
+                        {
+                            $notif = \App\PesananDetail::where('id_pesanan', $pesanan_utama->id_pesanan)->count(); 
+                        }
+                        ?>
                             <li class="cart-icon">
-                                <a href="#">
-                                    <i class="icon_bag_alt"></i>
-                                    <span>3</span>
+                                <a href="{{ url('/checkout') }}"><i class="icon_bag_alt fa-2x" ></i>
+                                @if(!empty($notif))
+                                <span>{{ $notif }}</span>
+                                @endif
                                 </a>
-                                <div class="cart-hover">
-                                    <div class="select-items">
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-1.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="si-pic"><img src="img/select-product-2.jpg" alt=""></td>
-                                                    <td class="si-text">
-                                                        <div class="product-selected">
-                                                            <p>$60.00 x 1</p>
-                                                            <h6>Kabino Bedside Table</h6>
-                                                        </div>
-                                                    </td>
-                                                    <td class="si-close">
-                                                        <i class="ti-close"></i>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="select-total">
-                                        <span>total:</span>
-                                        <h5>$120.00</h5>
-                                    </div>
-                                    <div class="select-button">
-                                        <a href="#" class="primary-btn view-card">VIEW CARD</a>
-                                        <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
-                                    </div>
-                                </div>
                             </li>
-                            <li class="cart-price">$150.00</li>
+                            <li class="cart-price"></li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
@@ -169,14 +121,24 @@
                         <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="#">Pemesanan Jasa Cetak</a>
                             <ul class="dropdown">
-                                <li><a href="{{ url('/pesanspanduk') }}">Spanduk</a></li>
-                                <li><a href="{{ url('/pesanxbanner') }}">X Banner</a></li>
-                                <li><a href="{{ url('/pesanposter') }}">Poster</a></li>
-                                <li><a href="{{ url('/pesanpin') }}">Pin</a></li>
+                            <?php 
+                             $datas =\App\Produk::orderBy('id_produk', 'DESC')->paginate(4); 
+                            foreach ($datas as $item) {?>
+                                <li>
+                                <a href="{{ url('/pesan', $item['id_produk']) }}"><?php echo $item['nama_produk']; ?></a>
+                                </li>    
+                            <?php }  ?>
+                                ?>                   
                             </ul>
+                          
                         </li>
                         <li><a href="{{ url('/contact') }}">Contact</a></li>
+                       @auth
+                       <li><a href="{{ url('/riwayat') }}">Riwayat Pemesanan</a></li>
+                        <li><a href="{{ url('/profile') }}">Profile</a></li>
+                       @endauth
                     </ul>
+                   
                 </nav>
                 <div id="mobile-menu-wrap"></div>
             </div>
@@ -221,7 +183,9 @@
        
     </footer>
     <!-- Footer Section End -->
-
+<Script>
+$('.dropdown-toggle').dropdown()
+</Script>
 
     <!-- Js Plugins -->
     <script src="{{ asset('user/js/jquery-3.3.1.min.js')}}"></script>

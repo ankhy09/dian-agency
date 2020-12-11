@@ -53,7 +53,7 @@
                         </div>
                     </form>
                     <div class="switch-login">
-                            <a href="{{ route('register') }}{{route('login')}}" class="or-login">Or Create An Account</a>
+                            <a href="{{ route('register') }}" class="or-login">Or Create An Account</a>
                     </div>
 
                 </div>

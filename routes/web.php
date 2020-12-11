@@ -25,21 +25,39 @@ route::group(['prefix'=>'admin'], function(){
 
 
 
-route::get('/ukuran/{id}/create', 'admin\\UkuranController@create');
-route::resource('/ukuran', 'admin\\UkuranController');
-route::get('/ukuran/{id}/', 'admin\\UkuranController@index');
+Route::get('/ukuran/{id}/create', 'admin\\UkuranController@create');
+Route::resource('/ukuran', 'admin\\UkuranController');
+Route::get('/ukuran/{id}/', 'admin\\UkuranController@index');
 
+Route::get('datapesanan', 'admin\\AdminController@pesanan');
+Route::get('datapesanan/{id}', 'admin\\AdminController@detail');
+Route::delete('/datapelanggan/{id}', 'admin\\AdminController@destroy');
+
+
+Route::get('download/{id}', 'admin\\AdminController@download');
 
 Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
-Route::get('/profile','PelangganController@profile');
-Route::get('/orderansaya','PelangganController@orderansaya');
 
-Route::get('/pesan/{id}','PesanController@index');
+Route::get('/pesan/{id}','PagesController@katalog');
+
 Route::post('/pesan/{id}','PesanController@pesan');
+Route::get('/checkout','PesanController@checkout');
+Route::delete('/checkout/{id}', 'PesanController@delete');
+Route::get('/konfirmasi-check-out','PesanController@konfirmasi');
+
+Route::get('profile', 'ProfileController@index');
+Route::post('profile', 'ProfileController@update');
+Route::get('riwayat', 'RiwayatController@index');
+Route::get('riwayat/{id}', 'RiwayatController@detail');
 
 
-Route::get('/cart','PagesController@cart');
+
+//konfirmasi pembayaran
+Route::get('konfirmasi/{id}', 'admin\\AdminController@konfirmasi');
+
+//kirim invoice
+Route::get('invoice/{id}', 'admin\\AdminController@invoice');
 
 Route::get('/login','PagesController@login');
 Route::get('/register','PagesController@register');
