@@ -14,24 +14,20 @@
                 </thead>
                 <tbody>
                 <?php $no=1; ?>
-                @foreach($pelanggan as $user)            
+                @foreach($datas as $user)            
                     <tr>
                         <td>{{$no++}}</td>
-                        <td>{{$user->pelanggan->nama}}</td>
-                        <td>{{$user->pelanggan->email}}</td>
-                        <td>{{$user->pelanggan->no_hp}}</td>
+                        <td>{{$user->nama}}</td>
+                        <td>{{$user->no_telp}}</td>
+                        <td>{{$user->email}}</td>
                         <td>
-                            <form method="POST" action="#" accept-charset="UTF-8" style="display:inline">
-                                {{ method_field('DELETE') }}
-                                {{ csrf_field() }}
-                                <button type="submit" class="btn btn-danger btn-sm" title="Hapus Pesanan" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                            </form>
+                            <a href="#"class="btn btn-primary btn-sm">Riwayat Belanja</a>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            {!! $pelanggan->render() !!}
+            {!! $datas->render() !!}
         </div>
 
         

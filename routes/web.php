@@ -31,7 +31,9 @@ Route::get('/ukuran/{id}/', 'admin\\UkuranController@index');
 
 Route::get('datapesanan', 'admin\\AdminController@pesanan');
 Route::get('datapesanan/{id}', 'admin\\AdminController@detail');
-Route::delete('/datapelanggan/{id}', 'admin\\AdminController@destroy');
+Route::delete('/datapesanan/{id}', 'admin\\AdminController@destroy');
+
+Route::get('datapelanggan', 'admin\\AdminController@pelanggan');
 
 
 Route::get('download/{id}', 'admin\\AdminController@download');

@@ -1,26 +1,25 @@
 @extends ('user.main')
 @section('content')
-    <!-- Hero Section Begin -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row justify-content-center">
+
+    <!-- Banner Section Begin -->
+    <div class="banner-section spad">
+        <div class="container-fluid">
+            <div class="row">
             @foreach($datas as $item)
-                <div class="col-md-3 mb-5">
-                    <div class="card text-center" style="width: 18rem;">
-                        <img class="card-img-top" src="{{url('/images/produk/' . $item->gambar)}}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title"><strong>{{ $item->nama_produk }}</strong></h5>
-                            <a href="{{ url('/pesan', $item->id_produk)  }}" class="primary-btn">PESAN</a>
-                        </div>
+                <div class="col-lg-3 mt-4">
+                    <div class="single-banner">
+                        <img src="{{url('/images/produk/' . $item->gambar)}}" alt="">
+                    </div>
+                    <div class="col-lg-12 mt-3">
+                            <center><h5 class="card-title"><strong>{{ $item->nama_produk }}</strong></h5></center>
+                            <center><a href="{{ url('/pesan', $item->id_produk)  }}" class="primary-btn">PESAN</a></center>
                     </div>
                 </div>
-               
                 @endforeach
-
             </div>
         </div>
-    </section>
-    <!-- Hero Section End -->
+    </div>
+    <!-- Banner Section End -->
 
     @endsection
     <!-- Banner Section End -->

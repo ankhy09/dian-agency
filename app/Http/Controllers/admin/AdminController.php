@@ -52,8 +52,9 @@ class AdminController extends Controller
 
     public function destroy($id)
     {
-        Pesanan::destroy($id);
-        return redirect()->to('pesanan')->with('flash_message', 'pesanan terhapus!');
+        $pesanan = Pesanan::find($id);
+        $pesanan->delete();
+        return redirect()->to('/datapesanan')->with('flash_message', 'pesanan terhapus!');
     }
 
     public function download($id)
@@ -83,7 +84,6 @@ class AdminController extends Controller
 
        
         $data["email"]=$pesanan->pelanggan->email;
-        $data["client_name"]=$pesanan->pelanggan->nama;
         $data["subject"]='invoice';
 
         $pdf = PDF::loadview('admin/invoice_pdf',['pesanan'=>$pesanan, 'pesanan_detail'=>$pesanan_detail]);
@@ -99,5 +99,10 @@ class AdminController extends Controller
       return redirect()->back()->with('success', 'your message,here');   }
 
         
+      public function pelanggan() {
+        
+        $datas = User::orderBy('id_pelanggan', 'DESC')->paginate(10);
+        return view('admin.pelanggan.index', compact('datas'));
+    }
 
 }

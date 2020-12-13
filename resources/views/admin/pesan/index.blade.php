@@ -31,8 +31,8 @@
                         <td>
                             <a href="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}"class="btn btn-primary btn-sm " title="Detail Pesanan">Detail</a>
                             <form method="POST" action="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}" accept-charset="UTF-8" style="display:inline">
-                                {{ method_field('DELETE') }}
-                                {{ csrf_field() }}
+                            @method('DELETE')
+                            @csrf
                                 <button type="submit" class="btn btn-danger btn-sm" title="Hapus Pesanan" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                             </form>
                         </td>

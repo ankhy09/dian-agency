@@ -75,21 +75,19 @@
         <div class="container">
             <div class="inner-header">
                 <div class="row">
-                    <div class="col-lg-1">
+                    <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="./index.html">
-                                <img src="images/logo.jpg" style="max-height: 80px" alt="">
+                            <a href="{{ url('/') }}">
+                                <img src="images/logo-da.png" style="max-height: 100px" alt="">
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-7 col-md-7">
-                        <div class="">
-                            <div class="">
-                            <h2> DIAN AGENCY DIGITAL PRINTING <h2/>
-                            </div>
+                    <div class="col-lg-7 ">
+                        <div class="logo">
+                                <img src="images/logo-da2.png" style="max-height: 100px" alt="">
                         </div>
                     </div>
-                    <div class="col-lg-3 text-right col-md-1">
+                    <div class="col-lg-3 text-right ">
                         <ul class="nav-right">
                         <?php
                             $pesanan_utama = \App\Pesanan::where('id_pelanggan', Auth::user()->id_pelanggan)->where('status',0)->first();
@@ -150,16 +148,50 @@
     @yield('content')
 
         <br>
-       <!-- Footer Section Begin -->
+
     <footer class="footer-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-3">
+                    <div class="footer-left">
+                        <div class="footer-logo">
+                            <a href="#"><img src="{{url('/images/produk/footer-logo')}}" alt=""></a>
+                        </div>
+                        <ul>
+                            <li><i class="fa fa-map-marker fa-lg"></i>&nbsp;&nbsp;Jl. M.T. Haryono no. 68, Buol, Biau, br Kabupaten Buol, Sulawesi Tengah 94565</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1">
+                    <div class="footer-widget">
+                        <h5>Information</h5>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Checkout</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Serivius</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="footer-widget">
+                        <h5>My Account</h5>
+                        <ul>
+                            <li><a href="#">My Account</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Shopping Cart</a></li>
+                            <li><a href="#">Shop</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="newslatter-item">
+                        <h5>Contact & Social Media</h5>
+                    </div>
                     <div class="footer-left">
                         <ul>
-                            <li>Address: Jl. M.T. Harioni No. 68</li>
-                            <li>Phone: +62 82.222.222</li>
-                            <li>Email: dianagency@gmail.com</li>
+                            <li><i class="fa fa-mobile fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Phone: +62 852.4112.2222</li>
+                            <li><i class="fa fa-envelope fa-md"></i>&nbsp;&nbsp;Email: hello.colorlib@gmail.com</li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -167,22 +199,29 @@
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-pinterest"></i></a>
                         </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-6">
-                <div class="footer-right">
-                             <div class="copyright-text">
-                                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Dian Agency Digital Printing
-                                        </div>
-                </div>
-                                        
+                    </div>
                 </div>
             </div>
         </div>
-       
+        <div class="copyright-reserved">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-text">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Dian Agency Digital Printing <i class="fa fa-heart-o" aria-hidden="true"></i> 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                        <div class="payment-pic">
+                            <img src="img/payment-method.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
-    <!-- Footer Section End -->
+
 <Script>
 $('.dropdown-toggle').dropdown()
 </Script>

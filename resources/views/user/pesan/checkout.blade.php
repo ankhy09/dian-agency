@@ -48,7 +48,7 @@
                                     <form method="POST" action="{{ url('/checkout' . '/' . $details->id_pesanandetail) }}" accept-charset="UTF-8" style="display:inline">
                                                              {{ method_field('DELETE') }}
                                                              {{ csrf_field() }}
-                                                             <button type="submit" title="Delete node" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="ti-close"></i></button>
+                                                             <button type="submit" title="Delete node" onclick="return confirm(&quot;Confirm delete?&quot;)" style="border:none;"><span><i class="ti-close"></i></span></button>
                                     </form>
                                     </td>
                                 </tr>
