@@ -42,8 +42,12 @@ Route::get('datapelanggan', 'admin\\AdminController@pelanggan');
 //download file
 Route::get('download/{id}', 'admin\\AdminController@download');
 
-//konfirmasi pembayaran
+//konfirmasi pembayaran admuin
 Route::get('konfirmasi/{id}', 'admin\\AdminController@konfirmasi');
+
+//konfirmasi pembayaran User
+Route::get('konfirmasi-pembayaran/{id}', 'PesanController@konfirmasi_pembayaran');
+Route::post('upload-bukti/{id}', 'PesanController@uploadPembayaran');
 
 //kirim nota ke email pelanggan
 Route::get('invoice/{id}', 'admin\\AdminController@invoice');

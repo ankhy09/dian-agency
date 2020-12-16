@@ -6,6 +6,7 @@ use App\Produk;
 use App\Ukuran;
 use App\Pesanan;
 use App\PesananDetail;
+use App\KonfirmasiPembayaran;
 use App\User;
 use Auth;
 use Alert;
@@ -126,6 +127,38 @@ class PesanController extends Controller
         
 
         return redirect()->to('riwayat/'.$pesanan_id);
+    }
+
+  
+
+    public function konfirmasi_pembayaran($id){
+        $datas = Pesanan::where('id_pesanan', $id)->first();
+        $konfirmasi = KonfirmasiPembayaran::where('id_pesanan', $id)->first();
+
+        return view('user.pesan.konfirmasiPembayaran', compact('datas'.'konfirmasi'));
+
+    }
+    public function uploadPembayaran(Request $request, $id){
+        
+
+        $this->validate($request, [
+            'bukti'         => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        $konfirmasi = new KonfirmasiPembayaran;
+        $konfirmasi->id_pesanan = $id;
+        $konfirmasi->nama = $request->nama;
+        $konfirmasi->bank = $request->bank;
+        $konfirmasi->jumlah = $request->jumlah;
+        $konfirmasi->tanggal = $request->tanggal;
+        // $pesanan_detail->file = $request->filecetak;
+        $image = $request->file('bukti');
+        $new_name = $konfirmasi->nama . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images/bukti'), $new_name);
+        $konfirmasi->bukti =  $new_name;
+        $konfirmasi->save();
+
+        return redirect()->to('riwayat/');
     }
 
    
