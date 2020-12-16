@@ -9,7 +9,6 @@
                         <th>Nama</th>
                         <th>No. Hp</th>
                         <th>Email</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,9 +19,6 @@
                         <td>{{$user->nama}}</td>
                         <td>{{$user->no_telp}}</td>
                         <td>{{$user->email}}</td>
-                        <td>
-                            <a href="#"class="btn btn-primary btn-sm">Riwayat Belanja</a>
-                        </td>
                     </tr>
                     @endforeach
                 </tbody>

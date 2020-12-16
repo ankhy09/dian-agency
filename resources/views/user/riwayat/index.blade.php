@@ -1,23 +1,41 @@
 @extends ('user.main')
 @section('content')
-<!-- Shopping Cart Section Begin -->
-<section class="shopping-cart spad">
+
+
+    <!-- Breadcrumb Section Begin -->
+    <div class="breacrumb-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <a href="{{ url('/') }}" class="primary-btn"><i class="fa fa-arrow-left"></i> Kembali</a>
+                <div class="col-lg-12">
+                    <div class="breadcrumb-text">
+                        <a href="{{ url('/') }}"><i class="fa fa-home"></i>&nbsp;Home</a>
+                        <span><i class="fa fa-history"></i>&nbsp;Riwayat Pemesanan</span>
+                    </div>
                 </div>
-                <div class="col-md-12 mt-2">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
-                        </ol>
-                    </nav>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Page Title Section Begin -->
+    <div class="col-lg-12 mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-details-inner">
+                        <div class="blog-detail-title">
+                            <h2><i class="fa fa-history"></i>&nbsp;Riwayat Pemesanan</h2>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12 mt-2">
-                <h3><i class="fa fa-history">Riwayat Pemesanan</i></h3>
-                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Title Section End -->
+
+    <!-- Riwayat Pemesanan Section Begin -->
+        <div class="container">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="cart-table">
                     <table class="table table-striped">
@@ -55,6 +73,6 @@
                 </div>
             </div>
         </div>
-    </section>
+    <!-- Riwayat Pemesanan Section End -->
+
     @endsection
-    <!-- Shopping Cart Section End -->

@@ -8,14 +8,58 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb-text">
-                        <a href="{{ url('/') }}"><i class="fa fa-home"></i> Home</a>
-                        <span>Contact</span>
+                        <a href="{{ url('/') }}"><i class="fa fa-home"></i>&nbsp;Home</a>
+                        <span>Tentang Kami</span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Breadcrumb Section Begin -->
+    <!-- Breadcrumb Section End -->
+
+    <!-- Page Title Section Begin -->
+    <div class="col-lg-12 mt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-details-inner">
+                        <div class="blog-detail-title">
+                            <h2>Tentang Kami</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Title Section End -->
+
+    <!-- Tentang Kami Section Begin -->
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="blog-details-inner">
+                        <div class="blog-large-pic">
+                            <img src="img/blog/blog-detail.jpg" alt="">
+                        </div>
+                        <div class="blog-detail-desc">
+                            <p>
+                                Dian Agency Digital Printing merupakan sebuah usaha perseorangan yang bergerak
+                                di bidang jasa percetakan yang berlokasi di Kabupaten Buol, Sulawesi Tengah.
+                                Produk yang dihasilkan dari Dian Agency Digital Printing adalah banner, pin, brosur, poster,
+                                undangan pernikahan, majalah, buku, dan sebagainya.
+                            </p>
+                            <p>
+                                Dian Agency Digital Printing yang terletak di Jalan M.T. Hariono No. 68 Kelurahan Buol Kecamatan
+                                Biau Kabupaten Buol ini pun telah memiliki beberapa klien tetap yang memakai jasanya seperti beberapa
+                                instansi pemerintahan dan juga beberapa kalangan masyarakat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Tentang Kami Section End -->
+
 
     <!-- Map Section Begin -->
     <div class="map spad">

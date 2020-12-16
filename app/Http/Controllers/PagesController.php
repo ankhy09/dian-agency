@@ -22,6 +22,12 @@ class PagesController extends Controller
         return view ('user.contact');
     }
 
+    public function cara()
+    {
+        return view ('user.carapesan');
+    }
+
+
     public function login()
     {
         return view ('user.login');

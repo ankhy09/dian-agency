@@ -31,7 +31,7 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12">
                                         <label for="nama_procject">Nama Project</label>                                               
-                                            <input class="form-control" name="nama" type="text" id="nama_project" value="" required="" >
+                                         <input class="form-control" name="nama" type="text" id="nama_project" value="" required="" >
                                     </div>
                                 </div>
                                 <br>

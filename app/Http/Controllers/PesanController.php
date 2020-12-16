@@ -91,6 +91,7 @@ class PesanController extends Controller
     }
 
     
+    //menampilkan data chackout pelanggan
     public function checkout()
     {
         $pesanan = Pesanan::where('id_pelanggan', Auth::user()->id_pelanggan)->where('status', 0)->first();

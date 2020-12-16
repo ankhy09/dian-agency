@@ -56,14 +56,14 @@
                 </div>
                 <div class="ht-right">
                     @guest
-                        <a href="{{ route('login') }}" class="login-panel"><i class="fa fa-sign-in"></i>Login</a>
+                        <a href="{{ route('login') }}" class="login-panel"><i class="fa fa-sign-in"></i>Masuk</a>
                     @if (Route::has('register'))
-                        <a class="login-panel" href="{{ route('register') }}" style="margin-right:5px;"><i class="fa fa-user-plus"></i> {{ __('Register') }}</a>
+                        <a class="login-panel" href="{{ route('register') }}" style="margin-right:5px;"><i class="fa fa-user-plus"></i> {{ __('Daftar') }}</a>
                     @endif
                     @else
                     <a class="login-panel" href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>
-                                {{ __('Logout') }}</a>
+                                {{ __('Keluar') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
@@ -77,14 +77,12 @@
                 <div class="row">
                     <div class="col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="{{ url('/') }}">
-                                <img src="images/logo-da.png" style="max-height: 100px" alt="">
-                            </a>
+                            <a href="{{ url('/') }}"><img src="{{ asset('images/logo-da.png') }}" style="max-height: 200px"></a>
                         </div>
                     </div>
                     <div class="col-lg-7 ">
                         <div class="logo">
-                                <img src="images/logo-da2.png" style="max-height: 100px" alt="">
+                                <img src="{{ asset('images/logo-da2.png') }}" style="max-height: 100px" alt="">
                         </div>
                     </div>
                     <div class="col-lg-3 text-right ">
@@ -97,7 +95,7 @@
                         }
                         ?>
                             <li class="cart-icon">
-                                <a href="{{ url('/checkout') }}"><i class="icon_bag_alt fa-2x" ></i>
+                                <a href="{{ url('/checkout') }}"><i class="icon_cart_alt fa-2x" ></i>
                                 @if(!empty($notif))
                                 <span>{{ $notif }}</span>
                                 @endif
@@ -130,10 +128,10 @@
                             </ul>
                           
                         </li>
-                        <li><a href="{{ url('/contact') }}">Contact</a></li>
+                        <li><a href="{{ url('/contact') }}">Tentang Kami</a></li>
                        @auth
                        <li><a href="{{ url('/riwayat') }}">Riwayat Pemesanan</a></li>
-                        <li><a href="{{ url('/profile') }}">Profile</a></li>
+                        <li><a href="{{ url('/profile') }}">Profil Pelanggan</a></li>
                        @endauth
                     </ul>
                    
@@ -155,43 +153,31 @@
                 <div class="col-lg-3">
                     <div class="footer-left">
                         <div class="footer-logo">
-                            <a href="#"><img src="{{url('/images/produk/footer-logo')}}" alt=""></a>
+                            <a href="#"><img src="{{ asset('images/logo-da.png') }}" style="max-height: 50px" alt=""></a>
                         </div>
                         <ul>
-                            <li><i class="fa fa-map-marker fa-lg"></i>&nbsp;&nbsp;Jl. M.T. Haryono no. 68, Buol, Biau, br Kabupaten Buol, Sulawesi Tengah 94565</span></li>
+                            </strong><li><i class="fa fa-map-marker fa-lg"></i>&nbsp;&nbsp;<strong>Alamat :</strong></li>
+                            <li>Jl. M.T. Haryono no. 68, Buol, Biau, Kabupaten Buol, Sulawesi Tengah 94565</li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1">
+                <div class="col-lg-4 offset-lg-1">
                     <div class="footer-widget">
-                        <h5>Information</h5>
+                        <h5>Informasi</h5>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Serivius</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="footer-widget">
-                        <h5>My Account</h5>
-                        <ul>
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Shopping Cart</a></li>
-                            <li><a href="#">Shop</a></li>
+                            <li><a href="{{ url('/contact') }}">Tentang Kami</a></li>
+                            <li><a href="{{ url('/carapesan') }}">Cara Pemesanan</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="newslatter-item">
-                        <h5>Contact & Social Media</h5>
+                        <h5>Kontak dan Media Sosial</h5>
                     </div>
-                    <div class="footer-left">
+                    <div class="footer-left" >
                         <ul>
                             <li><i class="fa fa-mobile fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Phone: +62 852.4112.2222</li>
-                            <li><i class="fa fa-envelope fa-md"></i>&nbsp;&nbsp;Email: hello.colorlib@gmail.com</li>
+                            <li><i class="fa fa-envelope fa-md"></i>&nbsp;&nbsp;Email: dianagency@gmail.com</li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -206,15 +192,14 @@
         </div>
         <div class="copyright-reserved">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-text">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Dian Agency Digital Printing <i class="fa fa-heart-o" aria-hidden="true"></i> 
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </div>
-                        <div class="payment-pic">
-                            <img src="img/payment-method.png" alt="">
+                <div class="d-flex justify-content-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="copyright-text">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                <center> Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Dian Agency Digital Printing <i class="fa fa-heart-o" aria-hidden="true"></i> <center>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </div>
                         </div>
                     </div>
                 </div>

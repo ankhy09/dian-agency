@@ -29,11 +29,11 @@
                                             Sudah dibayar 
                                         @endif</td>
                         <td>
-                            <a href="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}"class="btn btn-primary btn-sm " title="Detail Pesanan">Detail</a>
+                            <a href="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}"class="btn btn-primary btn-sm " title="Detail Pesanan"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>
                             <form method="POST" action="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}" accept-charset="UTF-8" style="display:inline">
                             @method('DELETE')
                             @csrf
-                                <button type="submit" class="btn btn-danger btn-sm" title="Hapus Pesanan" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" title="Hapus Pesanan" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fas fa-trash"></i>&nbsp;&nbsp;Delete</button>
                             </form>
                         </td>
                     </tr>

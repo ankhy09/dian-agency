@@ -31,10 +31,11 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>Admin</b>LTE</a>
+      <h2><strong>ADMIN</strong></h2>
+      <h2><strong>DIAN AGENCY</strong></h2>
     </div>
     <div class="card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Masukkan Username & Password</p>
 
       <form method="POST" action="{{ route('admin.login.submit') }}">
       @csrf
