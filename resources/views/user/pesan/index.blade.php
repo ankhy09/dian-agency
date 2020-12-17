@@ -57,7 +57,7 @@
                                 <br>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12">
-                                    <label for="gambar">Upload File Desain<span>*</span></label>
+                                    <label for="gambar">Upload File Desain<span>*minimal 2 Megabyte</span></label>
                                             <div class="custom-file mb-3">
                                                 <input type="file" name="filecetak" required="">
                                                 @if ($errors->has('filecetak'))

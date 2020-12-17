@@ -9,8 +9,8 @@
                     <div class="breadcrumb-text">
                         <a href="{{ url('/') }}"><i class="fa fa-home"></i>&nbsp;Home</a>
                         <a href="{{ url('riwayat') }}"><i class="fa fa-history"></i>&nbsp;Riwayat Pemesanan</a>
-                        <span>Konfirmasi Pembayaran</span>
-        
+                        <a href="{{ url('detail') }}"><i class="fa fa-info"></i>&nbsp;Detail Pemesanan</a>
+                        <span><i class="fa fa-credit-card"></i>&nbsp;Konfirmasi Pembayaran</span>
                     </div>
                 </div>
             </div>
@@ -72,10 +72,10 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="jumlah" class="col-md-2 col-form-label text-md-right">jumlah</label>
+                                    <label for="jumlah" class="col-md-2 col-form-label text-md-right">Jumlah Transfer</label>
 
                                     <div class="col-md-6">
-                                        <input id="jumlah" type="number" class="form-control @error('jumlah') is-invalid @enderror" name="jumlah" value="{{ $datas->total_harga }}" required autocomplete="jumlnah" readonly>
+                                        <input id="jumlah" type="number" class="form-control @error('jumlah') is-invalid @enderror" name="jumlah" value="{{ $datas->kode+$datas->total_harga }}" required autocomplete="jumlnah" readonly>
 
                                         @error('jumlah')
                                             <span class="invalid-feedback" role="alert">
@@ -115,8 +115,8 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-2">
-                                        <button type="submit" class="primary-btn">
-                                            Konfirmasi
+                                        <button type="submit" class="primary-btn" style="border:none;">
+                                            Konfirmasi Pembayaran
                                         </button>
                                     </div>
                                 </div>

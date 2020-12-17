@@ -66,15 +66,12 @@
                                         <td class="p-price first-row">{{$details->qty}}</td>
                                         <td class="total-price first-row">Rp. {{number_format ($details->jumlah_harga)}}</td>
                                     </tr>
-                                   
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
 
                         <div class="row">
-
-
-
                             <div class="col-lg-6 offset-lg-">
                                 <h4>Informasi Pembayaran</h4>
                                 <hr>
@@ -95,20 +92,14 @@
                                         <li class="cart-total">Total yang harus ditransfer : <span>Rp. {{ number_format($pesanan->kode+$pesanan->total_harga) }}</span></li>
                                     </ul>
                                 </div>
-
-                                    @if(!empty($konfirmasi))
-                                    <div style="padding-top:10px;">
-                                        <a href="{{ url('/konfirmasi-pembayaran/' . $details->id_pesanan) }}" class="primary-btn" style="width: 100%; text-align: center;"><i class="fa fa-credit-card"></i> Konfirmasi Pembayaran</a>
-                                    </div>
-                                    @else 
-                                    <div style="padding-top:10px;">
-                                        <a href="#" class="primary-btn" style="width: 100%; text-align: center;"><i class="fa fa-credit-card"></i> Pembayaran Sedang Kami Proses</a>
-                                    </div>
+                                <div style="padding-top:10px;">
+                                    @if($details->pesanan->status == 1)
+                                    <a href="{{ url('/konfirmasi-pembayaran/' . $details->id_pesanan) }}" class="primary-btn" style="width: 100%; text-align: center;"><i class="fa fa-credit-card"></i> Konfirmasi Pembayaran</a>
+                                    @else
+                                    <a href="#" class="primary-btn" style="width: 100%; text-align: center;"><i class="fa fa-credit-card"></i> Pembayaran Sedang Kami Proses</a>
                                     @endif
-                                    @endforeach
+                                </div>     
                             </div>
-
-                            
                         </div>
                     @endif
                 </div>

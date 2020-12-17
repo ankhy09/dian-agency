@@ -130,7 +130,7 @@
                         </li>
                         <li><a href="{{ url('/contact') }}">Tentang Kami</a></li>
                        @auth
-                       <li><a href="{{ url('/riwayat') }}">Riwayat Pemesanan</a></li>
+                        <li><a href="{{ url('/riwayat') }}">Riwayat Pemesanan</a></li>
                         <li><a href="{{ url('/profile') }}">Profil Pelanggan</a></li>
                        @endauth
                     </ul>

@@ -135,7 +135,7 @@ class PesanController extends Controller
         $datas = Pesanan::where('id_pesanan', $id)->first();
         $konfirmasi = KonfirmasiPembayaran::where('id_pesanan', $id)->first();
 
-        return view('user.pesan.konfirmasiPembayaran', compact('datas'.'konfirmasi'));
+        return view('user.pesan.konfirmasiPembayaran', compact('datas','konfirmasi'));
 
     }
     public function uploadPembayaran(Request $request, $id){

@@ -8,6 +8,7 @@ use App\Ukuran;
 use App\Pesanan;
 use App\PesananDetail;
 use App\User;
+use App\KonfirmasiPembayaran;   
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

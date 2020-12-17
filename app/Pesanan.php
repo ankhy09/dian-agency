@@ -20,5 +20,10 @@ class Pesanan extends Model
     {
         return $this->hasMany(PesananDetail::class,'id_pesanan');
     }
+
+    public function konfirmasipembayaran()
+    {
+        return $this->hasOne(KonfirmasiPembayaran::class,'id_pesanan');
+    }
 }
 

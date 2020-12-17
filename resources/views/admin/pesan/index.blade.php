@@ -11,6 +11,7 @@
                         <th>Total</th>
                         <th>Kode</th>
                         <th>Status</th>
+                        <th>Bukti</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -27,7 +28,13 @@
                                             Sudah Pesan & Belum dibayar
                                         @else
                                             Sudah dibayar 
-                                        @endif</td>
+                                        @endif
+                        </td>
+                        @if(!empty($pesan->konfirmasipembayaran->bukti))
+                        <td><img src="{{url('/images/bukti/' . $pesan->konfirmasipembayaran->bukti)}}" style="max-height: 50px" alt=""></td>
+                        @else
+                        <td>belum ada bukti </td>
+                        @endif
                         <td>
                             <a href="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}"class="btn btn-primary btn-sm " title="Detail Pesanan"><i class="fas fa-info"></i>&nbsp;&nbsp;Detail</a>
                             <form method="POST" action="{{ url('/datapesanan' . '/' . $pesan->id_pesanan) }}" accept-charset="UTF-8" style="display:inline">

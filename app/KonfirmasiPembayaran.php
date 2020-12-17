@@ -14,4 +14,11 @@ class KonfirmasiPembayaran extends Model
     [
             'id_pembayaran'
     ];
+
+
+    public function pesanan()
+    {
+        return $this->belongsTo(Pesanan::class,'id_pesanan');
+    }
+
 }
