@@ -146,6 +146,7 @@
                 </td>
 
                 <td>
+                    Ukuran
                 </td>
 
                 <td>
@@ -166,6 +167,7 @@
                 </td>
 
                 <td>
+                {{$details->ukuran->ukuran}}
                 </td>
 
                 <td>
@@ -181,9 +183,8 @@
             <tr class="total">
                 <td></td>
                 <td></td>
-
                 <td></td>
-                <td>Total</td>
+                <td>Total Harga</td>
                 
                 <td>
                 Rp. {{ number_format($pesanan->total_harga) }}
@@ -192,7 +193,6 @@
             <tr class="total">
                 <td></td>
                 <td></td>
-
                 <td></td>
                 <td>Kode Unik</td>
                 
@@ -203,16 +203,16 @@
             <tr class="total">
                 <td></td>
                 <td></td>
-
                 <td></td>
-                <td>Total</td>
+                <td><strong>Total Bayar</strong></td>
                 
                 <td>
-                Rp. {{ number_format($pesanan->kode+$pesanan->total_harga) }}
+                <strong>Rp. {{ number_format($pesanan->kode+$pesanan->total_harga) }}</strong>
                 </td>
             </tr>
            
         </table>
+        <p>Pesanan anda sedang kami proses. Pesanan dapat diambil 1 hari setelah menerima E-Faktur</p>
     </div>
 </body>
 </html>

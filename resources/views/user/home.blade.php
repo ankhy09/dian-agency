@@ -15,7 +15,7 @@
                             <center><a href="{{ url('/pesan', $item->id_produk)  }}" class="primary-btn">PESAN</a></center>
                     </div>
                 </div>
-                @endforeach
+            @endforeach
             </div>
         </div>
     </div>

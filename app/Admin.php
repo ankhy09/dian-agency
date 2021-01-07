@@ -28,9 +28,4 @@ class Admin extends Authenticatable
     {
       return $this->password;
     }
-
-
-   
-   
-    
 }

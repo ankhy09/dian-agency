@@ -50,7 +50,9 @@
                                         <th>No</th>
                                         <th>File</th>
                                         <th class="p-name">Nama Project</th>
-                                        <th class="p-name">Pesan Cetak</th>
+                                        <th>Pesan Cetak</th>
+                                        <th>Ukuran</th>
+                                        <th>Harga</th>
                                         <th>QTY</th>
                                         <th>Jumlah Harga</th>
                                     </tr>
@@ -59,12 +61,14 @@
                                     <?php $no=1; ?>
                                     @foreach($pesanan_detail as $details)
                                     <tr>
-                                        <td>{{$no++}}</td>
+                                        <td class="cart-title">{{$no++}}</td>
                                         <td class="cart-pic first-row"><img src="{{url('/images/pesanan/' . $details->file)}}" style="max-height: 100px" alt=""></td>
-                                        <td class="cart-title first-row">{{$details->nama_project}}</td>
-                                        <td class="cart-title first-row">{{$details->ukuran->produk->nama_produk}}</td>
-                                        <td class="p-price first-row">{{$details->qty}}</td>
-                                        <td class="total-price first-row">Rp. {{number_format ($details->jumlah_harga)}}</td>
+                                        <td class="cart-title">{{$details->nama_project}}</td>
+                                        <td class="qua-col">{{$details->ukuran->produk->nama_produk}}</td>
+                                        <td class="cart-title">{{$details->ukuran->ukuran}}</td>
+                                        <td class="qua-col">{{number_format ($details->ukuran->harga)}}</td>
+                                        <td>{{$details->qty}}</td>
+                                        <td class="qua-col">{{number_format ($details->jumlah_harga)}}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

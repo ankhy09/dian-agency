@@ -46,22 +46,28 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-12">
-                                        <label for="jumlah">Jumlah Pesan</label>                                               
+                                    <div class="col-lg-7 col-md-12">
+                                        <label for="jumlah">Jumlah Pesan</label>
+                                        @if($id=='25')  
+                                            <span>*Minimal 25 Pcs</span>
+                                        @endif                                             
                                             <input class="form-control" name="jumlah" type="text" value="" required="" >
-                                            @if ($errors->has('jumlah'))
-                                            <div class="alert alert-danger">isi angka</div>
-                                            @endif
                                     </div>
+                                    @if ($errors->has('jumlah'))
+                                            <br>
+                                            <div class="col-lg-12 col-md-12 alert alert-danger">
+                                            Isi Angka dan Minimal Pesan 25 Buah
+                                            </div>
+                                    @endif
                                 </div>
                                 <br>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12">
-                                    <label for="gambar">Upload File Desain<span>*minimal 2 Megabyte</span></label>
+                                    <label for="gambar">Upload File Desain <span>*Minimal Size 5 MB</span></label>
                                             <div class="custom-file mb-3">
                                                 <input type="file" name="filecetak" required="">
                                                 @if ($errors->has('filecetak'))
-                                            <div class="alert alert-danger">format file jpeg,png,jpg,gif,svg min:5120 dan max:10240</div>
+                                            <div class="alert alert-danger">Format file jpeg, png, jpg, gif, svg min:5120</div>
                                             @endif
                                             </div>
                                             

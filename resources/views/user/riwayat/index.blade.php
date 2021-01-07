@@ -57,9 +57,9 @@
                                     <td>Rp. {{ number_format($pesanan->total_harga+$pesanan->kode) }}</td>
                                     <td>
                                         @if($pesanan->status == 1)
-                                            Sudah Pesan & Belum dibayar
+                                            Belum Bayar
                                         @else
-                                            Sudah dibayar 
+                                            Sudah Bayar 
                                         @endif
                                     </td>
                                     <td>

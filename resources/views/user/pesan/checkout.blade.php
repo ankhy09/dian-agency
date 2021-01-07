@@ -48,7 +48,9 @@
                                     <th>No</th>
                                     <th>File</th>
                                     <th class="p-name">Nama Project</th>
-                                    <th class="p-name">Pesan Cetak</th>
+                                    <th>Pesan Cetak</th>
+                                    <th>Ukuran</th>
+                                    <th>Harga</th>
                                     <th>QTY</th>
                                     <th>Jumlah Harga</th>
                                     <th>Aksi</th>
@@ -58,12 +60,14 @@
                             <?php $no=1; ?>
                             @foreach($pesanan_detail as $details)
                                 <tr>
-                                    <td>{{$no++}}</td>
+                                    <td class="cart-title">{{$no++}}</td>
                                     <td class="cart-pic first-row"><img src="{{url('/images/pesanan/' . $details->file)}}" style="max-height: 100px" alt=""></td>
-                                    <td class="cart-title first-row">{{$details->nama_project}}</td>
-                                    <td class="cart-title first-row">{{$details->ukuran->produk->nama_produk}}</td>
-                                    <td class="p-price first-row">{{$details->qty}}</td>
-                                    <td class="total-price first-row">{{number_format ($details->jumlah_harga)}}</td>
+                                    <td class="cart-title">{{$details->nama_project}}</td>
+                                    <td>{{$details->ukuran->produk->nama_produk}}</td>
+                                    <td>{{$details->ukuran->ukuran}}</td>
+                                    <td>{{number_format ($details->ukuran->harga)}}</td>
+                                    <td>{{$details->qty}}</td>
+                                    <td>{{number_format ($details->jumlah_harga)}}</td>
                                     <td class="close-td first-row">
                                     <form method="POST" action="{{ url('/checkout' . '/' . $details->id_pesanandetail) }}" accept-charset="UTF-8" style="display:inline">
                                                              {{ method_field('DELETE') }}

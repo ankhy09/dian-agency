@@ -21,8 +21,6 @@ route::group(['prefix'=>'admin'], function(){
     route::get('/', 'admin\\AdminController@index')->name('admin.home');
 });
 
-
-
 //data produk
 Route::resource('/produk', 'admin\\ProdukController');
 
@@ -42,7 +40,7 @@ Route::get('datapelanggan', 'admin\\AdminController@pelanggan');
 //download file
 Route::get('download/{id}', 'admin\\AdminController@download');
 
-//konfirmasi pembayaran admuin
+//konfirmasi pembayaran admin
 Route::get('konfirmasi/{id}', 'admin\\AdminController@konfirmasi');
 
 //konfirmasi pembayaran User
@@ -57,9 +55,10 @@ Route::get('invoice/{id}', 'admin\\AdminController@invoice');
 Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
 Route::get('/carapesan','PagesController@cara');
-Route::get('/pesan/{id}','PagesController@katalog');
 
+Route::get('/pesan/{id}','PagesController@katalog');
 Route::post('/pesan/{id}','PesanController@pesan');
+
 Route::get('/checkout','PesanController@checkout');
 Route::delete('/checkout/{id}', 'PesanController@delete');
 Route::get('/konfirmasi-check-out','PesanController@konfirmasi');
@@ -69,15 +68,9 @@ Route::post('profile', 'ProfileController@update');
 Route::get('riwayat', 'RiwayatController@index');
 Route::get('riwayat/{id}', 'RiwayatController@detail');
 
-
-
-
-
-
 //login dan register pelanggan
 Route::get('/login','PagesController@login');
 Route::get('/register','PagesController@register');
-
 
 Auth::routes();
 

@@ -27,7 +27,7 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $item->produk->nama_produk}}</td>
                     <td>{{ $item->ukuran }}</td>
-                    <td>{{ $item->harga }}</td>
+                    <td>Rp. {{ number_format($item->harga) }}</td>
                     <td>
                         <a href="{{ url('/ukuran/' . $item->id_ukuran . '/edit') }}"class="btn btn-success btn-sm ">Edit</a>
                         <form method="POST" action="{{ url('/ukuran' . '/' . $item->id_ukuran) }}" accept-charset="UTF-8" style="display:inline">

@@ -21,7 +21,6 @@ class ProdukController extends Controller
         return view('admin.produk.index', compact('datas'));
     }
 
-    
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -38,11 +37,9 @@ class ProdukController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'gambar'         =>  'required|image|max:2048'
         ]);
-
         $post = new Produk;
         $post->nama_produk = $request->get('nama_produk');
         $post->deskripsi_produk = $request->get('deskripsi_produk');
@@ -51,7 +48,6 @@ class ProdukController extends Controller
         $image->move(public_path('images/produk'), $new_name);
         $post->gambar = $new_name;
         $post->save();
-
         return redirect('produk')->with('flash_message', 'Produk Berhasil Ditambahkan!');
     }
     
@@ -60,9 +56,6 @@ class ProdukController extends Controller
         $datas = Produk::findOrFail($id);
         return view('admin.produk.edit', compact('datas'));
     }
-
-
-
     public function update(Request $request, $id)
     {
 

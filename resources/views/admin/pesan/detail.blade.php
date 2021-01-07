@@ -18,6 +18,8 @@
                 <th>File</th>
                 <th>Nama Project</th>
                 <th>Pesan Cetak</th>
+                <th>Ukuran</th>
+                <th>Harga</th>
                 <th>QTY</th>
                 <th>Jumlah Harga</th>
                 <th>Aksi</th>
@@ -30,6 +32,8 @@
                 <td><img src="{{url('/images/pesanan/' . $details->file)}}" style="max-height: 50px" alt=""></td>
                 <td>{{$details->nama_project}}</td>
                 <td>{{$details->ukuran->produk->nama_produk}}</td>
+                <td>{{$details->ukuran->ukuran}}</td>
+                <td>{{number_format ($details->ukuran->harga)}}</td>
                 <td>{{$details->qty}}</td>
                 <td>Rp. {{number_format ($details->jumlah_harga)}}</td>
                 <td>
@@ -41,7 +45,7 @@
     </table>
     {!! $pesanan_detail->render() !!}
     <a href="{{ url('/konfirmasi' . '/' . $details->id_pesanan) }}"class="btn btn-success btn-m "><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Konfirmasi Pembayaran</a>
-    <a href="{{ url('/invoice' . '/' . $details->id_pesanan) }}"class="btn btn-primary btn-m "><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;Kirim invoice</a>
+    <a href="{{ url('/invoice' . '/' . $details->id_pesanan) }}"class="btn btn-primary btn-m "><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;Kirim E-Faktur</a>
 </div>
 
         

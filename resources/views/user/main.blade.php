@@ -33,13 +33,6 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
-
-
-
-
-
-
-
     <!-- Header Section Begin -->
     <header class="header-section">
         <div class="header-top">
@@ -68,6 +61,7 @@
                             @csrf
                         </form>
                         <a class="login-panel" style="margin-right:10px;"><i class="fa fa-user"></i>{{ Auth::user()->nama }} <span class="caret"></span></a>
+                        @endguest
                 </div>
             </div>
         </div>
@@ -82,10 +76,12 @@
                     </div>
                     <div class="col-lg-7 ">
                         <div class="logo">
-                                <img src="{{ asset('images/logo-da2.png') }}" style="max-height: 100px" alt="">
+                                <img src="{{ asset('images/logo-da3.png') }}" style="max-height: 100px" alt="">
                         </div>
                     </div>
+                   
                     <div class="col-lg-3 text-right ">
+                        @auth
                         <ul class="nav-right">
                         <?php
                             $pesanan_utama = \App\Pesanan::where('id_pelanggan', Auth::user()->id_pelanggan)->where('status',0)->first();
@@ -102,7 +98,8 @@
                                 </a>
                             </li>
                             <li class="cart-price"></li>
-                            @endguest
+                        @endauth
+                            
                         </ul>
                     </div>
                 </div>
