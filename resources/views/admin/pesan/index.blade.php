@@ -48,7 +48,5 @@
                 </tbody>
             </table>
             {!! $pesanans->render() !!}
-        </div>
-
-        
+        </div>   
 @endsection

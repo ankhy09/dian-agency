@@ -102,7 +102,7 @@
                             </div>
                         </div>
                             <h4>Melakukan Konfirmasi Pembayaran</h4>
-                        <p>Untuk Konfirmasi Pembayaran dapat dilakukan melalui via WhatsApp dengan mengirim foto bukti pembayaran. jika telah melakukan konfirmasi pembayaran, maka anda akan menerima nota elektronik berupa email yang nantinya akan digunakan untuk mengambil pesanan anda</p>
+                        <p>Untuk Konfirmasi Pembayaran dapat dilakukan dengan mengupload foto bukti pembayaran pada form konfirmasi pembayaran yang telah disediakan pada halaman detail pemesanan. jika telah melakukan konfirmasi pembayaran, maka anda akan menerima E-Faktur berupa email yang nantinya akan digunakan untuk mengambil pesanan anda</p>
                     </div>
                 </div>
             </div>

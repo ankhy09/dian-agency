@@ -40,7 +40,7 @@
                 <div class="ht-left">
                     <div class="mail-service">
                         <i class=" fa fa-envelope"></i>
-                        dianagency@gmail.com
+                        dianagencydp@gmail.com
                     </div>
                     <div class="phone-service">
                         <i class=" fa fa-phone"></i>
@@ -81,8 +81,8 @@
                     </div>
                    
                     <div class="col-lg-3 text-right ">
-                        @auth
                         <ul class="nav-right">
+                        @auth
                         <?php
                             $pesanan_utama = \App\Pesanan::where('id_pelanggan', Auth::user()->id_pelanggan)->where('status',0)->first();
                         if(!empty($pesanan_utama))
@@ -90,16 +90,17 @@
                             $notif = \App\PesananDetail::where('id_pesanan', $pesanan_utama->id_pesanan)->count(); 
                         }
                         ?>
+                        @endauth
                             <li class="cart-icon">
                                 <a href="{{ url('/checkout') }}"><i class="icon_cart_alt fa-2x" ></i>
+                                @auth
                                 @if(!empty($notif))
                                 <span>{{ $notif }}</span>
                                 @endif
+                                @endauth
                                 </a>
                             </li>
                             <li class="cart-price"></li>
-                        @endauth
-                            
                         </ul>
                     </div>
                 </div>
@@ -121,7 +122,6 @@
                                 <a href="{{ url('/pesan', $item['id_produk']) }}"><?php echo $item['nama_produk']; ?></a>
                                 </li>    
                             <?php }  ?>
-                                ?>                   
                             </ul>
                           
                         </li>
@@ -174,7 +174,7 @@
                     <div class="footer-left" >
                         <ul>
                             <li><i class="fa fa-mobile fa-lg"></i>&nbsp;&nbsp;&nbsp;&nbsp;Phone: +62 852.4112.2222</li>
-                            <li><i class="fa fa-envelope fa-md"></i>&nbsp;&nbsp;Email: dianagency@gmail.com</li>
+                            <li><i class="fa fa-envelope fa-md"></i>&nbsp;&nbsp;Email: dianagencydp@gmail.com</li>
                         </ul>
                         <div class="footer-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>

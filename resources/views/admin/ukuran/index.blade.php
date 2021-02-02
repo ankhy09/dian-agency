@@ -41,7 +41,7 @@
             </tbody>
                          </table>
            
-
+ {!! $datas->render() !!}
         <a href="{{ url('/ukuran/' . $ids . '/create') }}"class="btn btn-primary btn-m ">Tambah</a>
 
         </div>

@@ -43,11 +43,10 @@ class PesanController extends Controller
         $pesanan_baru = Pesanan::where('id_pelanggan', Auth::user()->id_pelanggan)->where('status', 0)->first();
         if($id=='25'){
             $this->validate($request, [
-                'jumlah'            => 'required|integer|min:10',
+                'jumlah'            => 'required|integer|min:25',
             ]);
         }        
         $this->validate($request, [
-            // 'filecetak'         => 'required|image|mimes:jpeg,png,jpg,gif,svg|size:5000',
             'filecetak'         => 'required|image|mimes:jpeg,png,jpg,gif,svg',
             'jumlah'            => 'required|integer',
         ]);
@@ -77,8 +76,8 @@ class PesanController extends Controller
         }
         } else if(($id  == '25') && ($pesanan_detail->qty >= 100)) {
             $diskon = 0.05 * ($ukurans->harga*$request->jumlah);
-        } else if(($id  == '26')  && ($pesanan_detail->qty >= 100)) {
-            $diskon = 0.05 * ($ukurans->harga*$request->jumlah);
+        } else if(($id  == '26')  && ($pesanan_detail->qty >= 20)) {
+            $diskon = 0.1 * ($ukurans->harga*$request->jumlah);
         }
         
         $pesanan_detail->jumlah_harga = ($ukurans->harga*$request->jumlah) - $diskon;
@@ -88,7 +87,7 @@ class PesanController extends Controller
         
     	//hitung total harga
     	$pesanan = Pesanan::where('id_pelanggan', Auth::user()->id_pelanggan)->where('status', 0)->first();
-    	$pesanan->total_harga = $pesanan->total_harga+$ukurans->harga*$request->jumlah;
+    	$pesanan->total_harga = $pesanan->total_harga+($ukurans->harga*$request->jumlah-$diskon);
     	$pesanan->update();
         
         Alert::success('Pesanan Sukses Masuk Keranjang', 'Success');

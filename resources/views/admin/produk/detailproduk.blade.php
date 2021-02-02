@@ -19,7 +19,4 @@
 
         <a href="{{ url('/ukuran/create') }}"class="btn btn-primary btn-m ">Tambah</a>
 </div>
-
-
-        
 @endsection

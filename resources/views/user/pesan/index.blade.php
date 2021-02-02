@@ -67,7 +67,7 @@
                                             <div class="custom-file mb-3">
                                                 <input type="file" name="filecetak" required="">
                                                 @if ($errors->has('filecetak'))
-                                            <div class="alert alert-danger">Format file jpeg, png, jpg, gif, svg min:5120</div>
+                                            <div class="alert alert-danger">Format file jpeg, png, jpg, gif, svg minimal 5 Megabyte</div>
                                             @endif
                                             </div>
                                             

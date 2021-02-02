@@ -32,5 +32,4 @@ class PagesController extends Controller
         $id = $id;
         return view('user.pesan.index', compact('datas','ukurans','id'));
     }
-    
 }

@@ -7,7 +7,6 @@
             @endsection
 @section('content')
 @section('judul_halaman', 'EDIT')
-  
             <!-- form input data--->
             @if ($errors->any())
             <ul class="alert alert-danger">
@@ -16,12 +15,10 @@
             @endforeach
             </ul>
             @endif
-
                 <form method="POST" action="{{ route('ukuran.update', $datas->id_ukuran)}}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                         {{ method_field('PUT') }}
                             {{ csrf_field() }}
                             @include ('admin.ukuran.form', ['formMode' => 'edit'])
                 </form>
-
             <!-- form input data--->
 @endsection

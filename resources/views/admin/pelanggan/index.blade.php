@@ -25,6 +25,4 @@
             </table>
             {!! $datas->render() !!}
         </div>
-
-        
 @endsection

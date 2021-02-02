@@ -47,6 +47,4 @@
     <a href="{{ url('/konfirmasi' . '/' . $details->id_pesanan) }}"class="btn btn-success btn-m "><i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;Konfirmasi Pembayaran</a>
     <a href="{{ url('/invoice' . '/' . $details->id_pesanan) }}"class="btn btn-primary btn-m "><i class="fa fa-paper-plane" aria-hidden="true"></i>&nbsp;&nbsp;Kirim E-Faktur</a>
 </div>
-
-        
 @endsection

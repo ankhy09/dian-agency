@@ -88,7 +88,7 @@
                                 <ul>
                                     <li class="cart-total"><strong>Total Harga <span>Rp. {{number_format($pesanan->total_harga)}}</span></strong></li>
                                 </ul>
-                                <a href="{{ url('konfirmasi-check-out') }}" class="proceed-btn">CHECK OUT</a>
+                                <a href="{{ url('konfirmasi-check-out') }}" class="proceed-btn">CHECKOUT</a>
                             </div>
                         </div>
                     </div>

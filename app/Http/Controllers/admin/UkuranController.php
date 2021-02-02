@@ -9,7 +9,6 @@ use App\Produk;
 
 class UkuranController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth:admin');
@@ -21,7 +20,7 @@ class UkuranController extends Controller
     }
 
     public function show($id){
-        $datas = Ukuran::where('id_produk', '=', $id)->take(10)->get();
+        $datas = Ukuran::where('id_produk', '=', $id)->paginate(10);
         $ids = $id;
         return view('admin.ukuran.index', compact('datas','ids'));
     }
@@ -74,7 +73,4 @@ class UkuranController extends Controller
         Ukuran::destroy($id);
         return redirect()->to('ukuran')->with('flash_message', 'ukuran terhapus!');
     }
-
-
-
 }
