@@ -25,11 +25,4 @@ class PagesController extends Controller
     {
         return view ('user.login');
     }
-    public function katalog($id)
-    {
-        $ukurans = Ukuran::where('id_produk', $id)->take(10)->get();
-        $datas = Produk::where('id_produk', $id)->first();
-        $id = $id;
-        return view('user.pesan.index', compact('datas','ukurans','id'));
-    }
 }

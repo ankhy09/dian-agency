@@ -79,9 +79,7 @@ class PesanController extends Controller
         } else if(($id  == '26')  && ($pesanan_detail->qty >= 20)) {
             $diskon = 0.1 * ($ukurans->harga*$request->jumlah);
         }
-        
         $pesanan_detail->jumlah_harga = ($ukurans->harga*$request->jumlah) - $diskon;
-
         $pesanan_detail->save();
 
         

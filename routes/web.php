@@ -56,7 +56,7 @@ Route::get('/','PagesController@home');
 Route::get('/contact','PagesController@contact');
 Route::get('/carapesan','PagesController@cara');
 
-Route::get('/pesan/{id}','PagesController@katalog');
+Route::get('/pesan/{id}','HomeController@katalog');
 Route::post('/pesan/{id}','PesanController@pesan');
 
 Route::get('/checkout','PesanController@checkout');
